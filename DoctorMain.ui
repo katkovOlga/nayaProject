@@ -17,8 +17,8 @@
    <widget class="QTabWidget" name="tabrecept">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
+      <x>-10</x>
+      <y>-30</y>
       <width>481</width>
       <height>571</height>
      </rect>
@@ -36,7 +36,7 @@
      <string>patienVisit</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="Visit">
      <attribute name="title">
@@ -228,14 +228,30 @@
        <string>Create Recept</string>
       </property>
      </widget>
-     <widget class="QTableView" name="tblCooper">
+     <widget class="QListView" name="listView_2">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>300</y>
-        <width>411</width>
+        <x>20</x>
+        <y>360</y>
+        <width>371</width>
         <height>192</height>
        </rect>
+      </property>
+      <property name="accessibleName">
+       <string>LstResult</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>340</y>
+        <width>151</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt; Drug Cooperation Result&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </widget>
@@ -243,6 +259,280 @@
      <attribute name="title">
       <string>New Patient</string>
      </attribute>
+     <widget class="QPushButton" name="btnPat">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>330</y>
+        <width>56</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Add Patient</string>
+      </property>
+     </widget>
+     <widget class="QListView" name="LstPatDet">
+      <property name="geometry">
+       <rect>
+        <x>35</x>
+        <y>200</y>
+        <width>371</width>
+        <height>91</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>180</y>
+        <width>161</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;list of Chronic Deagnoses&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblFn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>First Name</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>131</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Last Name</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>90</y>
+        <width>61</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>add diagnose</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="txtFN">
+      <property name="geometry">
+       <rect>
+        <x>64</x>
+        <y>10</y>
+        <width>171</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 222);
+gridline-color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="lineWidth">
+       <number>5</number>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Txtln">
+      <property name="geometry">
+       <rect>
+        <x>64</x>
+        <y>30</y>
+        <width>171</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(0, 0, 0);
+background-color: rgb(253, 255, 224);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="TxtDiag">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>90</y>
+        <width>161</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(225, 255, 197);
+border-color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>120</y>
+        <width>61</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>add medcine  for current diagnoses</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnDiag_2">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>90</y>
+        <width>56</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Add Diagnose</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnDrug_2">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>150</y>
+        <width>61</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>add Drug</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>35</width>
+        <height>10</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Birth date</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="btnSex">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>10</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Male/Female(unchecked)</string>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="Date1">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>50</y>
+        <width>110</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>150</y>
+        <width>35</width>
+        <height>10</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Dose</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="txtDose">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>150</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(0, 0, 0);
+background-color: rgb(250, 255, 243);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chConst">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>150</y>
+        <width>53</width>
+        <height>14</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Constant</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cmbDrug">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>120</y>
+        <width>191</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnCanc">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>330</y>
+        <width>56</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Cancel</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tabrecept">
      <attribute name="title">
