@@ -19,11 +19,11 @@ import sys
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(788, 600)
+        MainWindow.resize(800, 800)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.tabrecept = QtWidgets.QTabWidget(self.centralwidget)
-        self.tabrecept.setGeometry(QtCore.QRect(-10, -30, 481, 571))
+        self.tabrecept.setGeometry(QtCore.QRect(-10, -30, 800, 800))
         self.tabrecept.setWhatsThis("")
         self.tabrecept.setObjectName("tabrecept")
         self.Visit = QtWidgets.QWidget()
@@ -31,6 +31,7 @@ class Ui_MainWindow(object):
         self.pushButton = QtWidgets.QPushButton(self.Visit)
         self.pushButton.setGeometry(QtCore.QRect(220, 10, 91, 20))
         self.pushButton.setObjectName("pushButton")
+        # self.pushButton.clicked.connect(findPatient())
         self.label = QtWidgets.QLabel(self.Visit)
         self.label.setGeometry(QtCore.QRect(10, 10, 201, 21))
         self.label.setStyleSheet("background-color: rgb(255, 246, 211);")
@@ -38,8 +39,9 @@ class Ui_MainWindow(object):
         self.btnDiag = QtWidgets.QPushButton(self.Visit)
         self.btnDiag.setGeometry(QtCore.QRect(280, 240, 71, 21))
         self.btnDiag.setObjectName("btnDiag")
+        #self.btnDiag.clicked.connect()
         self.plainTextEdit = QtWidgets.QPlainTextEdit(self.Visit)
-        self.plainTextEdit.setGeometry(QtCore.QRect(0, 50, 421, 64))
+        self.plainTextEdit.setGeometry(QtCore.QRect(50, 50, 421, 64))
         self.plainTextEdit.setPlaceholderText("")
         self.plainTextEdit.setObjectName("plainTextEdit")
         self.plainTextEdit_2 = QtWidgets.QPlainTextEdit(self.Visit)
@@ -60,6 +62,7 @@ class Ui_MainWindow(object):
         self.btnDrug = QtWidgets.QPushButton(self.Visit)
         self.btnDrug.setGeometry(QtCore.QRect(280, 270, 56, 17))
         self.btnDrug.setObjectName("btnDrug")
+        #self.btnDrug.clicked.connect()
         self.cmbDiag = QtWidgets.QComboBox(self.Visit)
         self.cmbDiag.setGeometry(QtCore.QRect(10, 240, 231, 22))
         self.cmbDiag.setCurrentText("")
@@ -67,9 +70,10 @@ class Ui_MainWindow(object):
         self.label_2 = QtWidgets.QLabel(self.Visit)
         self.label_2.setGeometry(QtCore.QRect(10, 220, 181, 16))
         self.label_2.setObjectName("label_2")
-        self.pushButton_2 = QtWidgets.QPushButton(self.Visit)
-        self.pushButton_2.setGeometry(QtCore.QRect(340, 270, 56, 17))
-        self.pushButton_2.setObjectName("pushButton_2")
+        self.btnCrRicept = QtWidgets.QPushButton(self.Visit)
+        self.btnCrRicept.setGeometry(QtCore.QRect(340, 270, 56, 17))
+        self.btnCrRicept.setObjectName("CreateRecept")
+        #self.btnCrRiceptbtnCrRicept.clicked.connect()
         self.listView_2 = QtWidgets.QListView(self.Visit)
         self.listView_2.setGeometry(QtCore.QRect(20, 360, 371, 192))
         self.listView_2.setObjectName("listView_2")
@@ -82,6 +86,7 @@ class Ui_MainWindow(object):
         self.btnPat = QtWidgets.QPushButton(self.tab_2)
         self.btnPat.setGeometry(QtCore.QRect(350, 330, 56, 17))
         self.btnPat.setObjectName("btnPat")
+       # self.btnPat.clicked.connect()
         self.LstPatDet = QtWidgets.QListView(self.tab_2)
         self.LstPatDet.setGeometry(QtCore.QRect(35, 200, 371, 91))
         self.LstPatDet.setObjectName("LstPatDet")
@@ -208,7 +213,8 @@ class Ui_MainWindow(object):
         self.lblDrug.setText(_translate("MainWindow", "Insert your recommended drug"))
         self.btnDrug.setText(_translate("MainWindow", "CheckDrug"))
         self.label_2.setText(_translate("MainWindow", "type new diagnose please"))
-        self.pushButton_2.setText(_translate("MainWindow", "Create Recept"))
+        self.btnCrRicept.setText(_translate("MainWindow", "Create Recept"))
+
         self.listView_2.setAccessibleName(_translate("MainWindow", "LstResult"))
         self.label_5.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\"> Drug Cooperation Result</span></p></body></html>"))
         self.tabrecept.setTabText(self.tabrecept.indexOf(self.Visit), _translate("MainWindow", "Patient Visit"))
@@ -233,7 +239,8 @@ class Ui_MainWindow(object):
         self.menutestDrug.setTitle(_translate("MainWindow", "testDrug"))
         self.actionExit.setText(_translate("MainWindow", "Exit"))
 
-
+def findPatient(tz):
+    pass
 
 def application():
     #olga
