@@ -41,7 +41,7 @@ class Producer():
 
 pr1=Producer()
 #pr1.send("GetDrug" ,"""{"DrugName":"Aspirin"}""")
-
-pr1.send(c.topic1,'Optalgin')
+#
+pr1.send(c.topic1,'Aspirin')
 
 

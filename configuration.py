@@ -3,7 +3,7 @@
 # ========================================================================================================= #
 bootstrapServers = "cnt7-naya-cdh63:9092"
 topic1 = 'GetDrug'
-topic2 = 'GetDrugInteraction'
+topic2 = 'GetInteraction'
 
 
 

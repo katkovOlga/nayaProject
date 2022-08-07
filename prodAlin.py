@@ -1,6 +1,6 @@
 from kafka import KafkaProducer
 #while True:
-par = "aspirin"
+par = "Aspirin"
 topic='GetDrug'
 brokers = ['Cnt7-naya-cdh63:9092']
 producer = KafkaProducer(bootstrap_servers=brokers)
