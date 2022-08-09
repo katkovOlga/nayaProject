@@ -1,3 +1,5 @@
+# UI  buttons functionality
+#  written by Olga Katkov
 import json
 import configuration as c
 import ProducerReq as pr
@@ -7,7 +9,8 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 from textblob import TextBlob
 from pyspark.sql.types import StringType, StructType, IntegerType, FloatType
-
+from multiprocessing import Pool
+import asyncio
 
 # conection between  spark and kafka
 os.environ['PYSPARK_SUBMIT_ARGS'] = '--packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.1 pyspark-shell'
@@ -18,28 +21,45 @@ def findPatient(tz):
 
 def checkDrug(drugName):
     pr1 = pr.Producer()
-    # #pr1.send("GetDrug" ,"""{"DrugName":"Aspirin"}""")
-    # #  consumer to listen -- exit funct
     # async run to producer GetDrug
-    pr1.send(c.topic1,drugName.capitalize())
+    # #  consumer to listen -- if exist previous  -- to use
+    #
 
-
-    # In this example we will illustrate a simple producer-consumer integration
+    asyncio.run((pr1.send(c.topic1, drugName.capitalize())))
 
     topic =c.topic2 + drugName.capitalize() #'GetInteractionaspirin'
     print (topic)
+    spark = SparkSession \
+        .builder \
+        .appName("GetDrugInteraction") \
+        .getOrCreate()
+    # ReadStream from kafka
 
-    # First we set the consumer,
-    # and we use the KafkaConsumer class to create a generator of the messages.
+    df_kafka = spark.readStream \
+        .format("kafka") \
+        .option("kafka.bootstrap.servers", c.brokers)\
+        .option("subscribe", topic) \
+        .option("includeHeaders", "true") \
+        #.option("startingOffsets", "earliest") \
+        .option("endingOffsets", "latest") \
+        .load()
 
-    consumer = KafkaConsumer(topic, bootstrap_servers=c.brokers)
 
-    # print the value of the consumer
-    # we run the consumer generator to fetch the message scoming from topic1.
-    for message in consumer:
-        print(str(message.value))
+# Create schema for create df from json
+schema = StructType() \
+    .add("tweet_created_at", StringType()) \
+    .add("tweet_id", StringType()) \
+    .add("text", StringType()) \
+    .add("user_acount_created_at", StringType()) \
+    .add("user_id", StringType()) \
+    .add("name", StringType()) \
+    .add("followers_count", IntegerType()) \
+    .add("friends_count", IntegerType()) \
+    .add("listed_count", IntegerType())
+
+
+
      #return df
-
 
 
 def createReceipt(self):
@@ -48,3 +68,8 @@ def createReceipt(self):
 
 def addDiagnose(name):
     pass
+
+
+
+#### function tests
+checkDrug ('aspirin')
