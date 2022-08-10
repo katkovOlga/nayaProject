@@ -1,0 +1,2755 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template encoding-version="1.3">
+    <description></description>
+    <groupId>5efc166d-0182-1000-fd2e-6bc1e7c373c1</groupId>
+    <name>newJoltGetDrug</name>
+    <snippet>
+        <connections>
+            <id>1eafa5bd-91f9-3165-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>af075cc8-c8f9-360c-0000-000000000000</groupId>
+                <id>c48166c1-fdf9-3f5d-0000-000000000000</id>
+                <type>FUNNEL</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <selectedRelationships>success</selectedRelationships>
+            <source>
+                <groupId>af075cc8-c8f9-360c-0000-000000000000</groupId>
+                <id>32967464-dc4a-38d0-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <connections>
+            <id>22e354cf-9d18-373a-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>af075cc8-c8f9-360c-0000-000000000000</groupId>
+                <id>9d75cffe-f7da-3f49-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <selectedRelationships>success</selectedRelationships>
+            <source>
+                <groupId>af075cc8-c8f9-360c-0000-000000000000</groupId>
+                <id>56573961-306b-3b1c-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <connections>
+            <id>2a4e9acb-9176-34ad-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <bends>
+                <x>812.981201171875</x>
+                <y>209.11295439692339</y>
+            </bends>
+            <destination>
+                <groupId>af075cc8-c8f9-360c-0000-000000000000</groupId>
+                <id>c112cfd8-3537-35d5-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>0</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <selectedRelationships>success</selectedRelationships>
+            <source>
+                <groupId>af075cc8-c8f9-360c-0000-000000000000</groupId>
+                <id>db7d68e7-c7e0-37f7-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <connections>
+            <id>4370f326-572b-3abc-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>af075cc8-c8f9-360c-0000-000000000000</groupId>
+                <id>32967464-dc4a-38d0-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <selectedRelationships>Response</selectedRelationships>
+            <source>
+                <groupId>af075cc8-c8f9-360c-0000-000000000000</groupId>
+                <id>f95b15f9-7ab4-3b5d-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <connections>
+            <id>6486aaeb-0d99-35d2-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>af075cc8-c8f9-360c-0000-000000000000</groupId>
+                <id>56573961-306b-3b1c-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <selectedRelationships>success</selectedRelationships>
+            <source>
+                <groupId>af075cc8-c8f9-360c-0000-000000000000</groupId>
+                <id>15e1baa8-de72-3634-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <connections>
+            <id>6ab686b9-de07-37c7-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>af075cc8-c8f9-360c-0000-000000000000</groupId>
+                <id>4fec38b5-927b-3c84-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <selectedRelationships>matched</selectedRelationships>
+            <selectedRelationships>unmatched</selectedRelationships>
+            <source>
+                <groupId>af075cc8-c8f9-360c-0000-000000000000</groupId>
+                <id>c112cfd8-3537-35d5-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <connections>
+            <id>b5687e2a-cdfe-306e-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>af075cc8-c8f9-360c-0000-000000000000</groupId>
+                <id>f95b15f9-7ab4-3b5d-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <selectedRelationships>matched</selectedRelationships>
+            <selectedRelationships>unmatched</selectedRelationships>
+            <source>
+                <groupId>af075cc8-c8f9-360c-0000-000000000000</groupId>
+                <id>9d75cffe-f7da-3f49-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <connections>
+            <id>b73a170e-75f5-3cfa-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <bends>
+                <x>223.9718017578125</x>
+                <y>1436.9341709801754</y>
+            </bends>
+            <destination>
+                <groupId>af075cc8-c8f9-360c-0000-000000000000</groupId>
+                <id>71896ccf-1751-3e09-0000-000000000000</id>
+                <type>FUNNEL</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>0</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <selectedRelationships>success</selectedRelationships>
+            <source>
+                <groupId>af075cc8-c8f9-360c-0000-000000000000</groupId>
+                <id>4c6acfcd-bd8e-3ee5-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <connections>
+            <id>ed40f2fe-b4b4-3ed8-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>af075cc8-c8f9-360c-0000-000000000000</groupId>
+                <id>15e1baa8-de72-3634-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <selectedRelationships>Response</selectedRelationships>
+            <source>
+                <groupId>af075cc8-c8f9-360c-0000-000000000000</groupId>
+                <id>4fec38b5-927b-3c84-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <connections>
+            <id>ef37ac6c-c069-36c8-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <bends>
+                <x>640.7158203125</x>
+                <y>1064.060025472363</y>
+            </bends>
+            <destination>
+                <groupId>af075cc8-c8f9-360c-0000-000000000000</groupId>
+                <id>4c6acfcd-bd8e-3ee5-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>0</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <selectedRelationships>success</selectedRelationships>
+            <source>
+                <groupId>af075cc8-c8f9-360c-0000-000000000000</groupId>
+                <id>32967464-dc4a-38d0-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <controllerServices>
+            <id>8769a663-e26e-3428-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <bundle>
+                <artifact>nifi-record-serialization-services-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.14.0</version>
+            </bundle>
+            <comments></comments>
+            <descriptors>
+                <entry>
+                    <key>Schema Write Strategy</key>
+                    <value>
+                        <name>Schema Write Strategy</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>schema-cache</key>
+                    <value>
+                        <identifiesControllerService>org.apache.nifi.serialization.RecordSchemaCacheService</identifiesControllerService>
+                        <name>schema-cache</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>schema-protocol-version</key>
+                    <value>
+                        <dependencies>
+                            <dependentValues>hwx-schema-ref-attributes</dependentValues>
+                            <dependentValues>hwx-content-encoded-schema</dependentValues>
+                            <propertyName>Schema Write Strategy</propertyName>
+                        </dependencies>
+                        <name>schema-protocol-version</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>schema-access-strategy</key>
+                    <value>
+                        <name>schema-access-strategy</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>schema-registry</key>
+                    <value>
+                        <dependencies>
+                            <dependentValues>confluent-encoded</dependentValues>
+                            <dependentValues>schema-name</dependentValues>
+                            <dependentValues>hwx-schema-ref-attributes</dependentValues>
+                            <dependentValues>hwx-content-encoded-schema</dependentValues>
+                            <propertyName>schema-access-strategy</propertyName>
+                        </dependencies>
+                        <identifiesControllerService>org.apache.nifi.schemaregistry.services.SchemaRegistry</identifiesControllerService>
+                        <name>schema-registry</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>schema-name</key>
+                    <value>
+                        <dependencies>
+                            <dependentValues>schema-name</dependentValues>
+                            <propertyName>schema-access-strategy</propertyName>
+                        </dependencies>
+                        <name>schema-name</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>schema-version</key>
+                    <value>
+                        <dependencies>
+                            <dependentValues>schema-name</dependentValues>
+                            <propertyName>schema-access-strategy</propertyName>
+                        </dependencies>
+                        <name>schema-version</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>schema-branch</key>
+                    <value>
+                        <dependencies>
+                            <dependentValues>schema-name</dependentValues>
+                            <propertyName>schema-access-strategy</propertyName>
+                        </dependencies>
+                        <name>schema-branch</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>schema-text</key>
+                    <value>
+                        <dependencies>
+                            <dependentValues>schema-text-property</dependentValues>
+                            <propertyName>schema-access-strategy</propertyName>
+                        </dependencies>
+                        <name>schema-text</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>Date Format</key>
+                    <value>
+                        <name>Date Format</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>Time Format</key>
+                    <value>
+                        <name>Time Format</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>Timestamp Format</key>
+                    <value>
+                        <name>Timestamp Format</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>Pretty Print JSON</key>
+                    <value>
+                        <name>Pretty Print JSON</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>suppress-nulls</key>
+                    <value>
+                        <name>suppress-nulls</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>output-grouping</key>
+                    <value>
+                        <name>output-grouping</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>compression-format</key>
+                    <value>
+                        <name>compression-format</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>compression-level</key>
+                    <value>
+                        <dependencies>
+                            <dependentValues>gzip</dependentValues>
+                            <propertyName>compression-format</propertyName>
+                        </dependencies>
+                        <name>compression-level</name>
+                    </value>
+                </entry>
+            </descriptors>
+            <name>JsonRecordSetWriter</name>
+            <persistsState>false</persistsState>
+            <properties>
+                <entry>
+                    <key>Schema Write Strategy</key>
+                    <value>no-schema</value>
+                </entry>
+                <entry>
+                    <key>schema-cache</key>
+                </entry>
+                <entry>
+                    <key>schema-protocol-version</key>
+                    <value>1</value>
+                </entry>
+                <entry>
+                    <key>schema-access-strategy</key>
+                    <value>inherit-record-schema</value>
+                </entry>
+                <entry>
+                    <key>schema-registry</key>
+                </entry>
+                <entry>
+                    <key>schema-name</key>
+                    <value>${schema.name}</value>
+                </entry>
+                <entry>
+                    <key>schema-version</key>
+                </entry>
+                <entry>
+                    <key>schema-branch</key>
+                </entry>
+                <entry>
+                    <key>schema-text</key>
+                    <value>${avro.schema}</value>
+                </entry>
+                <entry>
+                    <key>Date Format</key>
+                </entry>
+                <entry>
+                    <key>Time Format</key>
+                </entry>
+                <entry>
+                    <key>Timestamp Format</key>
+                </entry>
+                <entry>
+                    <key>Pretty Print JSON</key>
+                    <value>false</value>
+                </entry>
+                <entry>
+                    <key>suppress-nulls</key>
+                    <value>never-suppress</value>
+                </entry>
+                <entry>
+                    <key>output-grouping</key>
+                    <value>output-array</value>
+                </entry>
+                <entry>
+                    <key>compression-format</key>
+                    <value>none</value>
+                </entry>
+                <entry>
+                    <key>compression-level</key>
+                    <value>1</value>
+                </entry>
+            </properties>
+            <state>ENABLED</state>
+            <type>org.apache.nifi.json.JsonRecordSetWriter</type>
+        </controllerServices>
+        <controllerServices>
+            <id>e21da5d1-5812-3f70-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <bundle>
+                <artifact>nifi-record-serialization-services-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.14.0</version>
+            </bundle>
+            <comments></comments>
+            <descriptors>
+                <entry>
+                    <key>schema-access-strategy</key>
+                    <value>
+                        <name>schema-access-strategy</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>schema-registry</key>
+                    <value>
+                        <dependencies>
+                            <dependentValues>confluent-encoded</dependentValues>
+                            <dependentValues>schema-name</dependentValues>
+                            <dependentValues>hwx-schema-ref-attributes</dependentValues>
+                            <dependentValues>hwx-content-encoded-schema</dependentValues>
+                            <propertyName>schema-access-strategy</propertyName>
+                        </dependencies>
+                        <identifiesControllerService>org.apache.nifi.schemaregistry.services.SchemaRegistry</identifiesControllerService>
+                        <name>schema-registry</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>schema-name</key>
+                    <value>
+                        <dependencies>
+                            <dependentValues>schema-name</dependentValues>
+                            <propertyName>schema-access-strategy</propertyName>
+                        </dependencies>
+                        <name>schema-name</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>schema-version</key>
+                    <value>
+                        <dependencies>
+                            <dependentValues>schema-name</dependentValues>
+                            <propertyName>schema-access-strategy</propertyName>
+                        </dependencies>
+                        <name>schema-version</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>schema-branch</key>
+                    <value>
+                        <dependencies>
+                            <dependentValues>schema-name</dependentValues>
+                            <propertyName>schema-access-strategy</propertyName>
+                        </dependencies>
+                        <name>schema-branch</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>schema-text</key>
+                    <value>
+                        <dependencies>
+                            <dependentValues>schema-text-property</dependentValues>
+                            <propertyName>schema-access-strategy</propertyName>
+                        </dependencies>
+                        <name>schema-text</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>schema-inference-cache</key>
+                    <value>
+                        <dependencies>
+                            <dependentValues>infer-schema</dependentValues>
+                            <propertyName>schema-access-strategy</propertyName>
+                        </dependencies>
+                        <identifiesControllerService>org.apache.nifi.serialization.RecordSchemaCacheService</identifiesControllerService>
+                        <name>schema-inference-cache</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>Date Format</key>
+                    <value>
+                        <name>Date Format</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>Time Format</key>
+                    <value>
+                        <name>Time Format</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>Timestamp Format</key>
+                    <value>
+                        <name>Timestamp Format</name>
+                    </value>
+                </entry>
+            </descriptors>
+            <name>JsonTreeReader</name>
+            <persistsState>false</persistsState>
+            <properties>
+                <entry>
+                    <key>schema-access-strategy</key>
+                    <value>infer-schema</value>
+                </entry>
+                <entry>
+                    <key>schema-registry</key>
+                </entry>
+                <entry>
+                    <key>schema-name</key>
+                    <value>${schema.name}</value>
+                </entry>
+                <entry>
+                    <key>schema-version</key>
+                </entry>
+                <entry>
+                    <key>schema-branch</key>
+                </entry>
+                <entry>
+                    <key>schema-text</key>
+                    <value>${avro.schema}</value>
+                </entry>
+                <entry>
+                    <key>schema-inference-cache</key>
+                </entry>
+                <entry>
+                    <key>Date Format</key>
+                </entry>
+                <entry>
+                    <key>Time Format</key>
+                </entry>
+                <entry>
+                    <key>Timestamp Format</key>
+                </entry>
+            </properties>
+            <state>ENABLED</state>
+            <type>org.apache.nifi.json.JsonTreeReader</type>
+        </controllerServices>
+        <funnels>
+            <id>20574ef9-c84c-3426-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <position>
+                <x>337.80482814303866</x>
+                <y>1046.7301054445243</y>
+            </position>
+        </funnels>
+        <funnels>
+            <id>71896ccf-1751-3e09-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <position>
+                <x>222.35668403170405</x>
+                <y>1507.8169678670624</y>
+            </position>
+        </funnels>
+        <funnels>
+            <id>c48166c1-fdf9-3f5d-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <position>
+                <x>1123.3415182010256</x>
+                <y>1248.0</y>
+            </position>
+        </funnels>
+        <labels>
+            <id>151ea0f6-9683-3d86-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <position>
+                <x>43.341518201025565</x>
+                <y>288.0</y>
+            </position>
+            <height>192.0</height>
+            <label>3. Get Drugid from API</label>
+            <style>
+                <entry>
+                    <key>font-size</key>
+                    <value>12px</value>
+                </entry>
+            </style>
+            <width>432.0</width>
+        </labels>
+        <labels>
+            <id>18d57958-c5c6-39c7-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <position>
+                <x>747.3415182010256</x>
+                <y>800.0</y>
+            </position>
+            <height>272.0</height>
+            <label>6. data transform - build output json</label>
+            <style>
+                <entry>
+                    <key>font-size</key>
+                    <value>12px</value>
+                </entry>
+            </style>
+            <width>448.0</width>
+        </labels>
+        <labels>
+            <id>1bce1538-b49d-3c98-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <position>
+                <x>0.0</x>
+                <y>1106.713589925488</y>
+            </position>
+            <height>264.0</height>
+            <label>7. Kafka Produce topic 2  - Finish</label>
+            <style>
+                <entry>
+                    <key>font-size</key>
+                    <value>12px</value>
+                </entry>
+            </style>
+            <width>536.0</width>
+        </labels>
+        <labels>
+            <id>3508d0b2-3597-3759-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <position>
+                <x>43.341518201025565</x>
+                <y>488.0</y>
+            </position>
+            <height>296.0</height>
+            <label>2.extraxt the naccesery valeu for forwording the flow for next api step</label>
+            <style>
+                <entry>
+                    <key>font-size</key>
+                    <value>12px</value>
+                </entry>
+            </style>
+            <width>1152.0</width>
+        </labels>
+        <labels>
+            <id>37757ccd-47d3-31cb-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <position>
+                <x>43.341518201025565</x>
+                <y>800.0</y>
+            </position>
+            <height>192.0</height>
+            <label>5 Get DrugInteraction from API</label>
+            <style>
+                <entry>
+                    <key>font-size</key>
+                    <value>12px</value>
+                </entry>
+            </style>
+            <width>392.0</width>
+        </labels>
+        <labels>
+            <id>3c4157f0-4225-3c07-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <position>
+                <x>347.34151820102556</x>
+                <y>0.0</y>
+            </position>
+            <height>176.0</height>
+            <label>Start
+ Kafka Consume GetDrug</label>
+            <style>
+                <entry>
+                    <key>font-size</key>
+                    <value>12px</value>
+                </entry>
+            </style>
+            <width>616.0</width>
+        </labels>
+        <labels>
+            <id>a8f2c692-4068-39ff-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <position>
+                <x>704.0</x>
+                <y>274.71358992548784</y>
+            </position>
+            <height>200.0</height>
+            <label>extract the drug name and use it as adinamic valeu on api</label>
+            <style>
+                <entry>
+                    <key>font-size</key>
+                    <value>12px</value>
+                </entry>
+            </style>
+            <width>496.0</width>
+        </labels>
+        <processors>
+            <id>15e1baa8-de72-3634-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <position>
+                <x>739.3415182010256</x>
+                <y>504.0</y>
+            </position>
+            <bundle>
+                <artifact>nifi-standard-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.14.0</version>
+            </bundle>
+            <config>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments>get only value drug info from http response</comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>jolt-transform</key>
+                        <value>
+                            <name>jolt-transform</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>jolt-custom-class</key>
+                        <value>
+                            <name>jolt-custom-class</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>jolt-custom-modules</key>
+                        <value>
+                            <name>jolt-custom-modules</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>jolt-spec</key>
+                        <value>
+                            <name>jolt-spec</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Transform Cache Size</key>
+                        <value>
+                            <name>Transform Cache Size</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>pretty_print</key>
+                        <value>
+                            <name>pretty_print</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>jolt-transform</key>
+                        <value>jolt-transform-chain</value>
+                    </entry>
+                    <entry>
+                        <key>jolt-custom-class</key>
+                    </entry>
+                    <entry>
+                        <key>jolt-custom-modules</key>
+                    </entry>
+                    <entry>
+                        <key>jolt-spec</key>
+                        <value>[{
+ 	"operation": "shift",
+ 	"spec": {
+ 	  "idGroup": {
+        "rxnormId":"rxnormId"
+	  }}}]</value>
+                    </entry>
+                    <entry>
+                        <key>Transform Cache Size</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>pretty_print</key>
+                        <value>false</value>
+                    </entry>
+                </properties>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>JoltTransformJSON</name>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>failure</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>success</name>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.standard.JoltTransformJSON</type>
+        </processors>
+        <processors>
+            <id>32967464-dc4a-38d0-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <position>
+                <x>763.3415182010256</x>
+                <y>864.0</y>
+            </position>
+            <bundle>
+                <artifact>nifi-standard-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.14.0</version>
+            </bundle>
+            <config>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments>Get relevant data from result</comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>jolt-transform</key>
+                        <value>
+                            <name>jolt-transform</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>jolt-custom-class</key>
+                        <value>
+                            <name>jolt-custom-class</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>jolt-custom-modules</key>
+                        <value>
+                            <name>jolt-custom-modules</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>jolt-spec</key>
+                        <value>
+                            <name>jolt-spec</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Transform Cache Size</key>
+                        <value>
+                            <name>Transform Cache Size</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>pretty_print</key>
+                        <value>
+                            <name>pretty_print</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>jolt-transform</key>
+                        <value>jolt-transform-chain</value>
+                    </entry>
+                    <entry>
+                        <key>jolt-custom-class</key>
+                    </entry>
+                    <entry>
+                        <key>jolt-custom-modules</key>
+                    </entry>
+                    <entry>
+                        <key>jolt-spec</key>
+                        <value>[{
+  "operation": "shift",
+  "spec": {
+    "interactionTypeGroup": {
+      "*": {
+        "interactionType": {
+          "*": {
+            "minConceptItem": {
+              "rxcui": "rxcui",
+              "name": "name"
+            },
+            "interactionPair": {
+              "*": {
+                "severity": "severity",
+                "description": "description",
+                "interactionConcept": {
+                  "*": {
+                    "minConceptItem": {
+                      "rxcui": "IdList",
+                      "name": "NameList"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}]
+</value>
+                    </entry>
+                    <entry>
+                        <key>Transform Cache Size</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>pretty_print</key>
+                        <value>false</value>
+                    </entry>
+                </properties>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>JoltTransformJSON</name>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>failure</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>success</name>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.standard.JoltTransformJSON</type>
+        </processors>
+        <processors>
+            <id>4c6acfcd-bd8e-3ee5-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <position>
+                <x>40.0</x>
+                <y>1194.713589925488</y>
+            </position>
+            <bundle>
+                <artifact>nifi-kafka-2-6-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.14.0</version>
+            </bundle>
+            <config>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments>Send grug interaction result to doctor application </comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>bootstrap.servers</key>
+                        <value>
+                            <name>bootstrap.servers</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>topic</key>
+                        <value>
+                            <name>topic</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>record-reader</key>
+                        <value>
+                            <identifiesControllerService>org.apache.nifi.serialization.RecordReaderFactory</identifiesControllerService>
+                            <name>record-reader</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>record-writer</key>
+                        <value>
+                            <identifiesControllerService>org.apache.nifi.serialization.RecordSetWriterFactory</identifiesControllerService>
+                            <name>record-writer</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>use-transactions</key>
+                        <value>
+                            <name>use-transactions</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Failure Strategy</key>
+                        <value>
+                            <name>Failure Strategy</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>transactional-id-prefix</key>
+                        <value>
+                            <name>transactional-id-prefix</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>acks</key>
+                        <value>
+                            <name>acks</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>attribute-name-regex</key>
+                        <value>
+                            <name>attribute-name-regex</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>message-header-encoding</key>
+                        <value>
+                            <name>message-header-encoding</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>security.protocol</key>
+                        <value>
+                            <name>security.protocol</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>sasl.mechanism</key>
+                        <value>
+                            <name>sasl.mechanism</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>kerberos-credentials-service</key>
+                        <value>
+                            <identifiesControllerService>org.apache.nifi.kerberos.KerberosCredentialsService</identifiesControllerService>
+                            <name>kerberos-credentials-service</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>sasl.kerberos.service.name</key>
+                        <value>
+                            <name>sasl.kerberos.service.name</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>sasl.kerberos.principal</key>
+                        <value>
+                            <name>sasl.kerberos.principal</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>sasl.kerberos.keytab</key>
+                        <value>
+                            <name>sasl.kerberos.keytab</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>sasl.username</key>
+                        <value>
+                            <name>sasl.username</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>sasl.password</key>
+                        <value>
+                            <name>sasl.password</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>sasl.token.auth</key>
+                        <value>
+                            <name>sasl.token.auth</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>ssl.context.service</key>
+                        <value>
+                            <identifiesControllerService>org.apache.nifi.ssl.SSLContextService</identifiesControllerService>
+                            <name>ssl.context.service</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>message-key-field</key>
+                        <value>
+                            <name>message-key-field</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>max.request.size</key>
+                        <value>
+                            <name>max.request.size</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>ack.wait.time</key>
+                        <value>
+                            <name>ack.wait.time</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>max.block.ms</key>
+                        <value>
+                            <name>max.block.ms</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>partitioner.class</key>
+                        <value>
+                            <name>partitioner.class</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>partition</key>
+                        <value>
+                            <name>partition</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>compression.type</key>
+                        <value>
+                            <name>compression.type</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>bootstrap.servers</key>
+                        <value>cnt7-naya-cdh63:9092</value>
+                    </entry>
+                    <entry>
+                        <key>topic</key>
+                        <value>GetInteraction${drug.0}</value>
+                    </entry>
+                    <entry>
+                        <key>record-reader</key>
+                        <value>e21da5d1-5812-3f70-0000-000000000000</value>
+                    </entry>
+                    <entry>
+                        <key>record-writer</key>
+                        <value>8769a663-e26e-3428-0000-000000000000</value>
+                    </entry>
+                    <entry>
+                        <key>use-transactions</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>Failure Strategy</key>
+                        <value>Route to Failure</value>
+                    </entry>
+                    <entry>
+                        <key>transactional-id-prefix</key>
+                    </entry>
+                    <entry>
+                        <key>acks</key>
+                        <value>all</value>
+                    </entry>
+                    <entry>
+                        <key>attribute-name-regex</key>
+                    </entry>
+                    <entry>
+                        <key>message-header-encoding</key>
+                        <value>UTF-8</value>
+                    </entry>
+                    <entry>
+                        <key>security.protocol</key>
+                        <value>PLAINTEXT</value>
+                    </entry>
+                    <entry>
+                        <key>sasl.mechanism</key>
+                        <value>GSSAPI</value>
+                    </entry>
+                    <entry>
+                        <key>kerberos-credentials-service</key>
+                    </entry>
+                    <entry>
+                        <key>sasl.kerberos.service.name</key>
+                    </entry>
+                    <entry>
+                        <key>sasl.kerberos.principal</key>
+                    </entry>
+                    <entry>
+                        <key>sasl.kerberos.keytab</key>
+                    </entry>
+                    <entry>
+                        <key>sasl.username</key>
+                    </entry>
+                    <entry>
+                        <key>sasl.password</key>
+                    </entry>
+                    <entry>
+                        <key>sasl.token.auth</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>ssl.context.service</key>
+                    </entry>
+                    <entry>
+                        <key>message-key-field</key>
+                    </entry>
+                    <entry>
+                        <key>max.request.size</key>
+                        <value>1 MB</value>
+                    </entry>
+                    <entry>
+                        <key>ack.wait.time</key>
+                        <value>5 secs</value>
+                    </entry>
+                    <entry>
+                        <key>max.block.ms</key>
+                        <value>5 sec</value>
+                    </entry>
+                    <entry>
+                        <key>partitioner.class</key>
+                        <value>org.apache.kafka.clients.producer.internals.DefaultPartitioner</value>
+                    </entry>
+                    <entry>
+                        <key>partition</key>
+                    </entry>
+                    <entry>
+                        <key>compression.type</key>
+                        <value>none</value>
+                    </entry>
+                </properties>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>PublishKafkaRecord_2_6</name>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>failure</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>success</name>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.kafka.pubsub.PublishKafkaRecord_2_6</type>
+        </processors>
+        <processors>
+            <id>4fec38b5-927b-3c84-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <position>
+                <x>67.34151820102556</x>
+                <y>328.0</y>
+            </position>
+            <bundle>
+                <artifact>nifi-standard-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.14.0</version>
+            </bundle>
+            <config>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments>send http api request to drugBunk api to get drug id according to drug name</comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>HTTP Method</key>
+                        <value>
+                            <name>HTTP Method</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Remote URL</key>
+                        <value>
+                            <name>Remote URL</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>SSL Context Service</key>
+                        <value>
+                            <identifiesControllerService>org.apache.nifi.ssl.SSLContextService</identifiesControllerService>
+                            <name>SSL Context Service</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Connection Timeout</key>
+                        <value>
+                            <name>Connection Timeout</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Read Timeout</key>
+                        <value>
+                            <name>Read Timeout</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>idle-timeout</key>
+                        <value>
+                            <name>idle-timeout</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>max-idle-connections</key>
+                        <value>
+                            <name>max-idle-connections</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Include Date Header</key>
+                        <value>
+                            <name>Include Date Header</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Follow Redirects</key>
+                        <value>
+                            <name>Follow Redirects</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>disable-http2</key>
+                        <value>
+                            <name>disable-http2</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Attributes to Send</key>
+                        <value>
+                            <name>Attributes to Send</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Useragent</key>
+                        <value>
+                            <name>Useragent</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Basic Authentication Username</key>
+                        <value>
+                            <name>Basic Authentication Username</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Basic Authentication Password</key>
+                        <value>
+                            <name>Basic Authentication Password</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>proxy-configuration-service</key>
+                        <value>
+                            <identifiesControllerService>org.apache.nifi.proxy.ProxyConfigurationService</identifiesControllerService>
+                            <name>proxy-configuration-service</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Proxy Host</key>
+                        <value>
+                            <name>Proxy Host</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Proxy Port</key>
+                        <value>
+                            <name>Proxy Port</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Proxy Type</key>
+                        <value>
+                            <name>Proxy Type</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>invokehttp-proxy-user</key>
+                        <value>
+                            <name>invokehttp-proxy-user</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>invokehttp-proxy-password</key>
+                        <value>
+                            <name>invokehttp-proxy-password</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Put Response Body In Attribute</key>
+                        <value>
+                            <name>Put Response Body In Attribute</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Max Length To Put In Attribute</key>
+                        <value>
+                            <name>Max Length To Put In Attribute</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Digest Authentication</key>
+                        <value>
+                            <name>Digest Authentication</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Always Output Response</key>
+                        <value>
+                            <name>Always Output Response</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Add Response Headers to Request</key>
+                        <value>
+                            <name>Add Response Headers to Request</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Content-Type</key>
+                        <value>
+                            <name>Content-Type</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>send-message-body</key>
+                        <value>
+                            <name>send-message-body</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Use Chunked Encoding</key>
+                        <value>
+                            <name>Use Chunked Encoding</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Penalize on "No Retry"</key>
+                        <value>
+                            <name>Penalize on "No Retry"</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>use-etag</key>
+                        <value>
+                            <name>use-etag</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>etag-max-cache-size</key>
+                        <value>
+                            <name>etag-max-cache-size</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>ignore-response-content</key>
+                        <value>
+                            <name>ignore-response-content</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>form-body-form-name</key>
+                        <value>
+                            <name>form-body-form-name</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>set-form-filename</key>
+                        <value>
+                            <name>set-form-filename</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>HTTP Method</key>
+                        <value>GET</value>
+                    </entry>
+                    <entry>
+                        <key>Remote URL</key>
+                        <value>https://rxnav.nlm.nih.gov/REST/rxcui.json?name=${drug.0}&amp;search=0</value>
+                    </entry>
+                    <entry>
+                        <key>SSL Context Service</key>
+                    </entry>
+                    <entry>
+                        <key>Connection Timeout</key>
+                        <value>5 secs</value>
+                    </entry>
+                    <entry>
+                        <key>Read Timeout</key>
+                        <value>15 secs</value>
+                    </entry>
+                    <entry>
+                        <key>idle-timeout</key>
+                        <value>5 mins</value>
+                    </entry>
+                    <entry>
+                        <key>max-idle-connections</key>
+                        <value>5</value>
+                    </entry>
+                    <entry>
+                        <key>Include Date Header</key>
+                        <value>True</value>
+                    </entry>
+                    <entry>
+                        <key>Follow Redirects</key>
+                        <value>True</value>
+                    </entry>
+                    <entry>
+                        <key>disable-http2</key>
+                        <value>False</value>
+                    </entry>
+                    <entry>
+                        <key>Attributes to Send</key>
+                    </entry>
+                    <entry>
+                        <key>Useragent</key>
+                    </entry>
+                    <entry>
+                        <key>Basic Authentication Username</key>
+                    </entry>
+                    <entry>
+                        <key>Basic Authentication Password</key>
+                    </entry>
+                    <entry>
+                        <key>proxy-configuration-service</key>
+                    </entry>
+                    <entry>
+                        <key>Proxy Host</key>
+                    </entry>
+                    <entry>
+                        <key>Proxy Port</key>
+                    </entry>
+                    <entry>
+                        <key>Proxy Type</key>
+                        <value>http</value>
+                    </entry>
+                    <entry>
+                        <key>invokehttp-proxy-user</key>
+                    </entry>
+                    <entry>
+                        <key>invokehttp-proxy-password</key>
+                    </entry>
+                    <entry>
+                        <key>Put Response Body In Attribute</key>
+                    </entry>
+                    <entry>
+                        <key>Max Length To Put In Attribute</key>
+                        <value>256</value>
+                    </entry>
+                    <entry>
+                        <key>Digest Authentication</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>Always Output Response</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>Add Response Headers to Request</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>Content-Type</key>
+                        <value>${mime.type}</value>
+                    </entry>
+                    <entry>
+                        <key>send-message-body</key>
+                        <value>true</value>
+                    </entry>
+                    <entry>
+                        <key>Use Chunked Encoding</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>Penalize on "No Retry"</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>use-etag</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>etag-max-cache-size</key>
+                        <value>10MB</value>
+                    </entry>
+                    <entry>
+                        <key>ignore-response-content</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>form-body-form-name</key>
+                    </entry>
+                    <entry>
+                        <key>set-form-filename</key>
+                        <value>true</value>
+                    </entry>
+                </properties>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>InvokeHTTP</name>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>Failure</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>No Retry</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>Original</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>Response</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>Retry</name>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.standard.InvokeHTTP</type>
+        </processors>
+        <processors>
+            <id>56573961-306b-3b1c-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <position>
+                <x>67.34151820102556</x>
+                <y>536.0</y>
+            </position>
+            <bundle>
+                <artifact>nifi-standard-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.14.0</version>
+            </bundle>
+            <config>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments>cut id only from  json</comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>jolt-transform</key>
+                        <value>
+                            <name>jolt-transform</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>jolt-custom-class</key>
+                        <value>
+                            <name>jolt-custom-class</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>jolt-custom-modules</key>
+                        <value>
+                            <name>jolt-custom-modules</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>jolt-spec</key>
+                        <value>
+                            <name>jolt-spec</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Transform Cache Size</key>
+                        <value>
+                            <name>Transform Cache Size</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>pretty_print</key>
+                        <value>
+                            <name>pretty_print</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>jolt-transform</key>
+                        <value>jolt-transform-chain</value>
+                    </entry>
+                    <entry>
+                        <key>jolt-custom-class</key>
+                    </entry>
+                    <entry>
+                        <key>jolt-custom-modules</key>
+                    </entry>
+                    <entry>
+                        <key>jolt-spec</key>
+                        <value>[{"operation": "modify-overwrite-beta","spec": {
+  
+        "rxnormId": "=lastElement(@(1,rxnormId))"
+
+      
+}}]</value>
+                    </entry>
+                    <entry>
+                        <key>Transform Cache Size</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>pretty_print</key>
+                        <value>false</value>
+                    </entry>
+                </properties>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>JoltTransformJSON</name>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>failure</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>success</name>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.standard.JoltTransformJSON</type>
+        </processors>
+        <processors>
+            <id>9d75cffe-f7da-3f49-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <position>
+                <x>747.3415182010256</x>
+                <y>640.0</y>
+            </position>
+            <bundle>
+                <artifact>nifi-standard-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.14.0</version>
+            </bundle>
+            <config>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments>put drug_id to attribute drug_id</comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>Destination</key>
+                        <value>
+                            <name>Destination</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Return Type</key>
+                        <value>
+                            <name>Return Type</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Path Not Found Behavior</key>
+                        <value>
+                            <name>Path Not Found Behavior</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Null Value Representation</key>
+                        <value>
+                            <name>Null Value Representation</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>drug_id</key>
+                        <value>
+                            <name>drug_id</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>Destination</key>
+                        <value>flowfile-attribute</value>
+                    </entry>
+                    <entry>
+                        <key>Return Type</key>
+                        <value>auto-detect</value>
+                    </entry>
+                    <entry>
+                        <key>Path Not Found Behavior</key>
+                        <value>ignore</value>
+                    </entry>
+                    <entry>
+                        <key>Null Value Representation</key>
+                        <value>empty string</value>
+                    </entry>
+                    <entry>
+                        <key>drug_id</key>
+                        <value>$.rxnormId</value>
+                    </entry>
+                </properties>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>EvaluateJsonPath</name>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>failure</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>matched</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>unmatched</name>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.standard.EvaluateJsonPath</type>
+        </processors>
+        <processors>
+            <id>c112cfd8-3537-35d5-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <position>
+                <x>739.3415182010256</x>
+                <y>328.0</y>
+            </position>
+            <bundle>
+                <artifact>nifi-standard-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.14.0</version>
+            </bundle>
+            <config>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments>Get Drug Name from consumer and save it into drug attribute</comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>Character Set</key>
+                        <value>
+                            <name>Character Set</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Maximum Buffer Size</key>
+                        <value>
+                            <name>Maximum Buffer Size</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Maximum Capture Group Length</key>
+                        <value>
+                            <name>Maximum Capture Group Length</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Enable Canonical Equivalence</key>
+                        <value>
+                            <name>Enable Canonical Equivalence</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Enable Case-insensitive Matching</key>
+                        <value>
+                            <name>Enable Case-insensitive Matching</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Permit Whitespace and Comments in Pattern</key>
+                        <value>
+                            <name>Permit Whitespace and Comments in Pattern</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Enable DOTALL Mode</key>
+                        <value>
+                            <name>Enable DOTALL Mode</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Enable Literal Parsing of the Pattern</key>
+                        <value>
+                            <name>Enable Literal Parsing of the Pattern</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Enable Multiline Mode</key>
+                        <value>
+                            <name>Enable Multiline Mode</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Enable Unicode-aware Case Folding</key>
+                        <value>
+                            <name>Enable Unicode-aware Case Folding</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Enable Unicode Predefined Character Classes</key>
+                        <value>
+                            <name>Enable Unicode Predefined Character Classes</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Enable Unix Lines Mode</key>
+                        <value>
+                            <name>Enable Unix Lines Mode</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Include Capture Group 0</key>
+                        <value>
+                            <name>Include Capture Group 0</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>extract-text-enable-repeating-capture-group</key>
+                        <value>
+                            <name>extract-text-enable-repeating-capture-group</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>extract-text-enable-named-groups</key>
+                        <value>
+                            <name>extract-text-enable-named-groups</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>drug</key>
+                        <value>
+                            <name>drug</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>Character Set</key>
+                        <value>UTF-8</value>
+                    </entry>
+                    <entry>
+                        <key>Maximum Buffer Size</key>
+                        <value>1 MB</value>
+                    </entry>
+                    <entry>
+                        <key>Maximum Capture Group Length</key>
+                        <value>1024</value>
+                    </entry>
+                    <entry>
+                        <key>Enable Canonical Equivalence</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>Enable Case-insensitive Matching</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>Permit Whitespace and Comments in Pattern</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>Enable DOTALL Mode</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>Enable Literal Parsing of the Pattern</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>Enable Multiline Mode</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>Enable Unicode-aware Case Folding</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>Enable Unicode Predefined Character Classes</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>Enable Unix Lines Mode</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>Include Capture Group 0</key>
+                        <value>true</value>
+                    </entry>
+                    <entry>
+                        <key>extract-text-enable-repeating-capture-group</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>extract-text-enable-named-groups</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>drug</key>
+                        <value>.*</value>
+                    </entry>
+                </properties>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>ExtractText</name>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>matched</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>unmatched</name>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.standard.ExtractText</type>
+        </processors>
+        <processors>
+            <id>db7d68e7-c7e0-37f7-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <position>
+                <x>568.0</x>
+                <y>26.713589925487838</y>
+            </position>
+            <bundle>
+                <artifact>nifi-kafka-2-6-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.14.0</version>
+            </bundle>
+            <config>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments>recieve getDrug requests from clients with specific drug name </comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>bootstrap.servers</key>
+                        <value>
+                            <name>bootstrap.servers</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>security.protocol</key>
+                        <value>
+                            <name>security.protocol</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>sasl.mechanism</key>
+                        <value>
+                            <name>sasl.mechanism</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>sasl.kerberos.service.name</key>
+                        <value>
+                            <name>sasl.kerberos.service.name</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>kerberos-credentials-service</key>
+                        <value>
+                            <identifiesControllerService>org.apache.nifi.kerberos.KerberosCredentialsService</identifiesControllerService>
+                            <name>kerberos-credentials-service</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>sasl.kerberos.principal</key>
+                        <value>
+                            <name>sasl.kerberos.principal</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>sasl.kerberos.keytab</key>
+                        <value>
+                            <name>sasl.kerberos.keytab</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>sasl.username</key>
+                        <value>
+                            <name>sasl.username</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>sasl.password</key>
+                        <value>
+                            <name>sasl.password</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>sasl.token.auth</key>
+                        <value>
+                            <name>sasl.token.auth</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>ssl.context.service</key>
+                        <value>
+                            <identifiesControllerService>org.apache.nifi.ssl.SSLContextService</identifiesControllerService>
+                            <name>ssl.context.service</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>topic</key>
+                        <value>
+                            <name>topic</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>topic_type</key>
+                        <value>
+                            <name>topic_type</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>honor-transactions</key>
+                        <value>
+                            <name>honor-transactions</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>group.id</key>
+                        <value>
+                            <name>group.id</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>auto.offset.reset</key>
+                        <value>
+                            <name>auto.offset.reset</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>key-attribute-encoding</key>
+                        <value>
+                            <name>key-attribute-encoding</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>message-demarcator</key>
+                        <value>
+                            <name>message-demarcator</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>separate-by-key</key>
+                        <value>
+                            <name>separate-by-key</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>message-header-encoding</key>
+                        <value>
+                            <name>message-header-encoding</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>header-name-regex</key>
+                        <value>
+                            <name>header-name-regex</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>max.poll.records</key>
+                        <value>
+                            <name>max.poll.records</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>max-uncommit-offset-wait</key>
+                        <value>
+                            <name>max-uncommit-offset-wait</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Communications Timeout</key>
+                        <value>
+                            <name>Communications Timeout</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>bootstrap.servers</key>
+                        <value>Cnt7-naya-cdh63:9092</value>
+                    </entry>
+                    <entry>
+                        <key>security.protocol</key>
+                        <value>PLAINTEXT</value>
+                    </entry>
+                    <entry>
+                        <key>sasl.mechanism</key>
+                        <value>GSSAPI</value>
+                    </entry>
+                    <entry>
+                        <key>sasl.kerberos.service.name</key>
+                    </entry>
+                    <entry>
+                        <key>kerberos-credentials-service</key>
+                    </entry>
+                    <entry>
+                        <key>sasl.kerberos.principal</key>
+                    </entry>
+                    <entry>
+                        <key>sasl.kerberos.keytab</key>
+                    </entry>
+                    <entry>
+                        <key>sasl.username</key>
+                    </entry>
+                    <entry>
+                        <key>sasl.password</key>
+                    </entry>
+                    <entry>
+                        <key>sasl.token.auth</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>ssl.context.service</key>
+                    </entry>
+                    <entry>
+                        <key>topic</key>
+                        <value>GetDrug</value>
+                    </entry>
+                    <entry>
+                        <key>topic_type</key>
+                        <value>names</value>
+                    </entry>
+                    <entry>
+                        <key>honor-transactions</key>
+                        <value>true</value>
+                    </entry>
+                    <entry>
+                        <key>group.id</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>auto.offset.reset</key>
+                        <value>latest</value>
+                    </entry>
+                    <entry>
+                        <key>key-attribute-encoding</key>
+                        <value>utf-8</value>
+                    </entry>
+                    <entry>
+                        <key>message-demarcator</key>
+                    </entry>
+                    <entry>
+                        <key>separate-by-key</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>message-header-encoding</key>
+                        <value>UTF-8</value>
+                    </entry>
+                    <entry>
+                        <key>header-name-regex</key>
+                    </entry>
+                    <entry>
+                        <key>max.poll.records</key>
+                        <value>10000</value>
+                    </entry>
+                    <entry>
+                        <key>max-uncommit-offset-wait</key>
+                        <value>1 secs</value>
+                    </entry>
+                    <entry>
+                        <key>Communications Timeout</key>
+                        <value>60 secs</value>
+                    </entry>
+                </properties>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>ConsumeKafka_2_6</name>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>success</name>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.kafka.pubsub.ConsumeKafka_2_6</type>
+        </processors>
+        <processors>
+            <id>f95b15f9-7ab4-3b5d-0000-000000000000</id>
+            <parentGroupId>af075cc8-c8f9-360c-0000-000000000000</parentGroupId>
+            <position>
+                <x>75.34151820102556</x>
+                <y>824.0</y>
+            </position>
+            <bundle>
+                <artifact>nifi-standard-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.14.0</version>
+            </bundle>
+            <config>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments>http api call to get drug interaction according id in attribute</comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>HTTP Method</key>
+                        <value>
+                            <name>HTTP Method</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Remote URL</key>
+                        <value>
+                            <name>Remote URL</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>SSL Context Service</key>
+                        <value>
+                            <identifiesControllerService>org.apache.nifi.ssl.SSLContextService</identifiesControllerService>
+                            <name>SSL Context Service</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Connection Timeout</key>
+                        <value>
+                            <name>Connection Timeout</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Read Timeout</key>
+                        <value>
+                            <name>Read Timeout</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>idle-timeout</key>
+                        <value>
+                            <name>idle-timeout</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>max-idle-connections</key>
+                        <value>
+                            <name>max-idle-connections</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Include Date Header</key>
+                        <value>
+                            <name>Include Date Header</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Follow Redirects</key>
+                        <value>
+                            <name>Follow Redirects</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>disable-http2</key>
+                        <value>
+                            <name>disable-http2</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Attributes to Send</key>
+                        <value>
+                            <name>Attributes to Send</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Useragent</key>
+                        <value>
+                            <name>Useragent</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Basic Authentication Username</key>
+                        <value>
+                            <name>Basic Authentication Username</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Basic Authentication Password</key>
+                        <value>
+                            <name>Basic Authentication Password</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>proxy-configuration-service</key>
+                        <value>
+                            <identifiesControllerService>org.apache.nifi.proxy.ProxyConfigurationService</identifiesControllerService>
+                            <name>proxy-configuration-service</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Proxy Host</key>
+                        <value>
+                            <name>Proxy Host</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Proxy Port</key>
+                        <value>
+                            <name>Proxy Port</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Proxy Type</key>
+                        <value>
+                            <name>Proxy Type</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>invokehttp-proxy-user</key>
+                        <value>
+                            <name>invokehttp-proxy-user</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>invokehttp-proxy-password</key>
+                        <value>
+                            <name>invokehttp-proxy-password</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Put Response Body In Attribute</key>
+                        <value>
+                            <name>Put Response Body In Attribute</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Max Length To Put In Attribute</key>
+                        <value>
+                            <name>Max Length To Put In Attribute</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Digest Authentication</key>
+                        <value>
+                            <name>Digest Authentication</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Always Output Response</key>
+                        <value>
+                            <name>Always Output Response</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Add Response Headers to Request</key>
+                        <value>
+                            <name>Add Response Headers to Request</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Content-Type</key>
+                        <value>
+                            <name>Content-Type</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>send-message-body</key>
+                        <value>
+                            <name>send-message-body</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Use Chunked Encoding</key>
+                        <value>
+                            <name>Use Chunked Encoding</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Penalize on "No Retry"</key>
+                        <value>
+                            <name>Penalize on "No Retry"</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>use-etag</key>
+                        <value>
+                            <name>use-etag</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>etag-max-cache-size</key>
+                        <value>
+                            <name>etag-max-cache-size</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>ignore-response-content</key>
+                        <value>
+                            <name>ignore-response-content</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>form-body-form-name</key>
+                        <value>
+                            <name>form-body-form-name</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>set-form-filename</key>
+                        <value>
+                            <name>set-form-filename</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>HTTP Method</key>
+                        <value>GET</value>
+                    </entry>
+                    <entry>
+                        <key>Remote URL</key>
+                        <value>https://rxnav.nlm.nih.gov/REST/interaction/interaction.json?rxcui=${drug_id}&amp;sources=DrugBank</value>
+                    </entry>
+                    <entry>
+                        <key>SSL Context Service</key>
+                    </entry>
+                    <entry>
+                        <key>Connection Timeout</key>
+                        <value>5 secs</value>
+                    </entry>
+                    <entry>
+                        <key>Read Timeout</key>
+                        <value>15 secs</value>
+                    </entry>
+                    <entry>
+                        <key>idle-timeout</key>
+                        <value>5 mins</value>
+                    </entry>
+                    <entry>
+                        <key>max-idle-connections</key>
+                        <value>5</value>
+                    </entry>
+                    <entry>
+                        <key>Include Date Header</key>
+                        <value>True</value>
+                    </entry>
+                    <entry>
+                        <key>Follow Redirects</key>
+                        <value>True</value>
+                    </entry>
+                    <entry>
+                        <key>disable-http2</key>
+                        <value>False</value>
+                    </entry>
+                    <entry>
+                        <key>Attributes to Send</key>
+                    </entry>
+                    <entry>
+                        <key>Useragent</key>
+                    </entry>
+                    <entry>
+                        <key>Basic Authentication Username</key>
+                    </entry>
+                    <entry>
+                        <key>Basic Authentication Password</key>
+                    </entry>
+                    <entry>
+                        <key>proxy-configuration-service</key>
+                    </entry>
+                    <entry>
+                        <key>Proxy Host</key>
+                    </entry>
+                    <entry>
+                        <key>Proxy Port</key>
+                    </entry>
+                    <entry>
+                        <key>Proxy Type</key>
+                        <value>http</value>
+                    </entry>
+                    <entry>
+                        <key>invokehttp-proxy-user</key>
+                    </entry>
+                    <entry>
+                        <key>invokehttp-proxy-password</key>
+                    </entry>
+                    <entry>
+                        <key>Put Response Body In Attribute</key>
+                    </entry>
+                    <entry>
+                        <key>Max Length To Put In Attribute</key>
+                        <value>256</value>
+                    </entry>
+                    <entry>
+                        <key>Digest Authentication</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>Always Output Response</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>Add Response Headers to Request</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>Content-Type</key>
+                        <value>${mime.type}</value>
+                    </entry>
+                    <entry>
+                        <key>send-message-body</key>
+                        <value>true</value>
+                    </entry>
+                    <entry>
+                        <key>Use Chunked Encoding</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>Penalize on "No Retry"</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>use-etag</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>etag-max-cache-size</key>
+                        <value>10MB</value>
+                    </entry>
+                    <entry>
+                        <key>ignore-response-content</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>form-body-form-name</key>
+                    </entry>
+                    <entry>
+                        <key>set-form-filename</key>
+                        <value>true</value>
+                    </entry>
+                </properties>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>InvokeHTTP</name>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>Failure</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>No Retry</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>Original</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>Response</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>Retry</name>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.standard.InvokeHTTP</type>
+        </processors>
+    </snippet>
+    <timestamp>08/10/2022 14:30:36 UTC</timestamp>
+</template>
