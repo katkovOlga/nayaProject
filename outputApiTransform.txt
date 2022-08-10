@@ -1,0 +1,172 @@
+json api output structure
+json start from interactionTypeGroup
+
+
+
+interactionTypeGroup.interactionType.minConceptItem.rxcui
+interactionTypeGroup.interactionType.minConceptItem.name
+[
+interactionTypeGroup.interactionType.interactionPair.interactionConcept[1].minConceptItem.rxcui
+interactionTypeGroup.interactionType.interactionPair.interactionConcept[1].minConceptItem.name
+interactionTypeGroup.interactionType.interactionPair.severity
+interactionTypeGroup.interactionType.interactionPair.description]
+[{
+  "operation": "shift",
+  "spec": {
+    "interactionTypeGroup": {
+      "*": {
+        "interactionType": {
+          "*": {
+            "minConceptItem": {
+              "rxcui": "rxcui",
+              "name": "name"
+            },
+            "interactionPair": {
+              "*": {
+                "severity": "interactionPair.severity",
+                "description": "interactionPair.description",
+                "interactionConcept": {
+                  "*": {
+                    "minConceptItem": {
+                      "rxcui": "interactionPair.ConceptItem.rxcui",
+                      "name": "interactionPair.ConceptItem.name"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}]
+
+
+
+{
+  "rxcui" : "88014",
+  "name" : "rizatriptan",
+  "interactionPair" : {
+    "severity" : [ "high", "high", "high", "high", "high" ],
+    "description" : [ "Triptans - monoamine oxidase (MAO) inhibitors", "Triptans - monoamine oxidase (MAO) inhibitors", "Triptans - monoamine oxidase (MAO) inhibitors", "Triptans - monoamine oxidase (MAO) inhibitors", "Triptans - monoamine oxidase (MAO) inhibitors" ],
+    "ConceptItem" : {
+      "rxcui" : [ "88014", "10734", "88014", "30121", "88014", "6011", "88014", "6878", "88014", "8123" ],
+      "name" : [ "rizatriptan", "tranylcypromine", "rizatriptan", "moclobemide", "rizatriptan", "isocarboxazid", "rizatriptan", "methylene blue", "rizatriptan", "phenelzine" ]
+    }
+  }
+
+
+---next try
+[{
+  "operation": "shift",
+  "spec": {
+    "interactionTypeGroup": {
+      "*": {
+        "interactionType": {
+          "*": {
+            "minConceptItem": {
+              "rxcui": "rxcui",
+              "name": "name"
+            },
+            "interactionPair": {
+              "*": {
+                "severity": "severity",
+                "description": "description",
+                "interactionConcept": {
+                  "*": {
+                    "minConceptItem": {
+                      "rxcui": "IdList",
+                      "name": "NameList"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}]
+
+{
+  "rxcui" : "88014",
+  "name" : "rizatriptan",
+  "severity" : [ "high", "high", "high", "high", "high" ],
+  "description" : [ "Triptans - monoamine oxidase (MAO) inhibitors", "Triptans - monoamine oxidase (MAO) inhibitors", "Triptans - monoamine oxidase (MAO) inhibitors", "Triptans - monoamine oxidase (MAO) inhibitors", "Triptans - monoamine oxidase (MAO) inhibitors" ],
+  "IdList" : [ "88014", "10734", "88014", "30121", "88014", "6011", "88014", "6878", "88014", "8123" ],
+  "NameList" : [ "rizatriptan", "tranylcypromine", "rizatriptan", "moclobemide", "rizatriptan", "isocarboxazid", "rizatriptan", "methylene blue", "rizatriptan", "phenelzine" ]
+}
+
+
+[{
+    "operation": "remove",
+    "spec": {
+      "nlmDisclaimer": ""
+    }
+ },
+  {
+    "operation": "remove",
+    "spec": {
+      "*": {
+        "sourceName": "",
+        "sourceDisclaimer": ""
+      }
+    }
+ }
+]
+ {
+ *     "interactionTypeGroup":{
+ *        "*":{"interactionPair":["*"
+ *          "interactionConcept":lastElement(@(1,interactionConcept)
+ *        ]},
+ *      },
+ *    }
+
+https://github.com/bazaarvoice/jolt#Documentation
+
+<interactiondata>
+<nlmDisclaimer>It is not the intention of NLM to provide specific medical advice, but rather to provide users with information to better understand their health and their medications. NLM urges you to consult with a qualified physician for advice about medications.</nlmDisclaimer>
+<interactionTypeGroup>
+<sourceDisclaimer>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3422823/</sourceDisclaimer>
+<sourceName>ONCHigh</sourceName>
+<interactionType>
+<comment>rizatriptan (88014) is resolved to rizatriptan (88014)</comment>
+<minConceptItem>
+<rxcui>88014</rxcui>
+<name>rizatriptan</name>
+<tty>IN</tty>
+</minConceptItem>
+<interactionPair>
+<interactionConcept>
+<minConceptItem>
+<rxcui>88014</rxcui>
+<name>rizatriptan</name>
+<tty>IN</tty>
+</minConceptItem>
+<sourceConceptItem>
+<id>NA</id>
+<name>rizatriptan</name>
+<url>NA</url>
+</sourceConceptItem>
+</interactionConcept>
+<interactionConcept>
+<minConceptItem>
+<rxcui>10734</rxcui>
+<name>tranylcypromine</name>
+<tty>IN</tty>
+</minConceptItem>
+<sourceConceptItem>
+<id>NA</id>
+<name>tranylcypromine</name>
+<url>NA</url>
+</sourceConceptItem>
+</interactionConcept>
+<severity>high</severity>
+<description>Triptans - monoamine oxidase (MAO) inhibitors</description>
+</interactionPair>
+</interactionPair>
+</interactionType>
+</interactionTypeGroup>
+</interactiondata>
