@@ -9,8 +9,8 @@ topic2 = 'GetInteraction'
 
 
 # ======== Format DataFrame to json file and Write it to HDFS  ==================== #
-kafka_to_hdfs_json_path = 'hdfs://Cnt7-naya-cdh63:8020/user/alin/de_proj/hdfsarchive/'
-kafka_to_hdfs_json_checkpoint_path = 'hdfs://Cnt7-naya-cdh63:8020/user/alin/de_proj/hdfsarchive.checkpoint/'
+hdfs_json_path = 'hdfs://Cnt7-naya-cdh63:8020/user/naya/de_proj/hdfsarchive/'
+hdfs_json_checkpoint_path = 'hdfs://Cnt7-naya-cdh63:8020/user/nay/de_proj/hdfsarchive.checkpoint/'
 
 # ======== Format DataFrame to parquet file and Write it to HDFS  ==================== #
 From_Kafka_To_Hdfs_Parquet_path = "hdfs://Cnt7-naya-cdh63:8020/user/alin/de_proj/traffic_parquet/"
@@ -20,10 +20,10 @@ From_Kafka_To_Hdfs_parquet_path_checkpointLocation = "hdfs://Cnt7-naya-cdh63:802
 # ========================================================================================================= #
 mysql_host = 'localhost'
 mysql_port = 3306
-mysql_database_name = 'DIASESES'
+mysql_database_name = "doctors"#'DIASESES'
 mysql_username = 'naya'
 mysql_password = 'NayaPass1!'
-mysql_table_name = 'DiseasesFile'
+mysql_table_name = "patients" #'DiseasesFile'
 
 # ========================================================================================================= #
 # =================================/hive/ =============================================== #
