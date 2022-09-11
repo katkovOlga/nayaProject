@@ -5,7 +5,7 @@ bootstrapServers = "cnt7-naya-cdh63:9092"
 topic1 = 'GetDrug'
 topic2 = 'GetInteraction'
 
-
+CurrentDoctorLic='5555555'
 
 
 # ======== Format DataFrame to json file and Write it to HDFS  ==================== #

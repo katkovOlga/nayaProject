@@ -5,18 +5,22 @@ import configuration as c
 import ProducerReq as pr
 from kafka import KafkaConsumer
 import os
+import re
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
-from textblob import TextBlob
+#from textblob import TextBlob
+#from textblob.classifiers import NaiveBayesClassifier
 from pyspark.sql.types import StringType, StructType, IntegerType, FloatType
 from multiprocessing import Pool
 import asyncio
-
+from  PatientClass import Patient
 # conection between  spark and kafka
 os.environ['PYSPARK_SUBMIT_ARGS'] = '--packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.1 pyspark-shell'
 
 def findPatient(tz):
-    pass
+    pat=Patient()
+    pat.tz= tz
+    #pat.findPatient()
 
 
 def checkDrug(drugName):
@@ -24,8 +28,9 @@ def checkDrug(drugName):
     # async run to producer GetDrug
     # #  consumer to listen -- if exist previous  -- to use
     #
+    print(drugName.capitalize())
 
-    asyncio.run((pr1.send(c.topic1, drugName.capitalize())))
+    #asyncio.run(pr1.send(c.topic1, drugName.capitalize()))
 
     topic =c.topic2 + drugName.capitalize() #'GetInteractionaspirin'
     print (topic)
@@ -34,28 +39,53 @@ def checkDrug(drugName):
         .appName("GetDrugInteraction") \
         .getOrCreate()
     # ReadStream from kafka
-
+    #.option("startingOffsets", "earliest") \ spark.sqlContext.readStream
+    # df_kafka = spark.readStream \
+    #     .format("kafka") \
+    #     .option("kafka.bootstrap.servers", c.bootstrapServers)\
+    #     .option("subscribe", topic) \
+    #     .option("includeHeaders", "true") \
+    #     .option("endingOffsets", "latest") \
+    #     .load()
     df_kafka = spark.readStream \
         .format("kafka") \
-        .option("kafka.bootstrap.servers", c.brokers)\
+        .option("kafka.bootstrap.servers", c.bootstrapServers)\
         .option("subscribe", topic) \
         .option("includeHeaders", "true") \
-        #.option("startingOffsets", "earliest") \
-        .option("endingOffsets", "latest") \
         .load()
+    pr1.send(c.topic1, drugName.capitalize())
+    # df_kafka = df_kafka.select(col("value").cast("string"))
+    # print(df_kafka)
+    # Create schema for create df from json
+    schema = StructType().add("name", StringType())         #     .add("rxcui", StringType()) \
 
+    # schema = StructType() \
+    #     .add("rxcui", StringType()) \
+    #     .add("name", StringType()) \
+        # .add("severity",StringType()) \
+        # .add("description",StringType()) \
+        # .add ("IdList",StringType()) \
+        # .add("NameList",StringType())
+    # change json to dataframe with schema
+    df1 = df_kafka.select(col("value").cast("string")) \
+        .select(from_json(col("value"), schema).alias("value")) \
+        .select("value.*")
+   # print('before')
+    df1.writeStream.format("console").start().awaitTermination()
 
-# Create schema for create df from json
-schema = StructType() \
-    .add("tweet_created_at", StringType()) \
-    .add("tweet_id", StringType()) \
-    .add("text", StringType()) \
-    .add("user_acount_created_at", StringType()) \
-    .add("user_id", StringType()) \
-    .add("name", StringType()) \
-    .add("followers_count", IntegerType()) \
-    .add("friends_count", IntegerType()) \
-    .add("listed_count", IntegerType())
+   # pr1.send(c.topic1, drugName.capitalize())
+   #  print('after stream')
+   #  paDf =df1.toPandas();
+   #  print(paDf)
+   #  #Medcine check interaction
+   #  spark.stop()
+   #  # exclude duplicates
+   #  print(paDf['rxcui'])
+   #  id= paDf['rxcui']
+   #  name=paDf['name']
+   #  idList=[di for di in paDf['IdList'].split(",") if di != id]
+   #  NameList=[ni for ni in paDf['NameList'].split(",") if ni != name]
+
 
 
 
@@ -71,5 +101,44 @@ def addDiagnose(name):
 
 
 
+def ClassifyDesc(desc):
+    # keyWords=[('adverse effects','neg'),
+    #           ('therapeutic efficacy','pos'),
+    #           ('',''),
+    #           ('','')]
+     # cl = NaiveBayesClassifier(keyWords)
+    # blob = TextBlob(desc, classifier=cl)
+    # res= blob.classify()
+    #re.search("risk or severity .increased", desc)
+    res=0
+
+    if bool(re.search("adverse effects.*increased", desc)):
+       res= -5
+    elif bool(re.search("therapeutic efficacy.*increased", desc)):
+        res=3
+    elif bool(re.search("therapeutic efficacy.*decreased", desc)) :
+        res=-2
+    elif bool(re.search("risk or severity.*increased", desc)) :
+        res=-4
+    elif bool(re.search("excretion rate.*decreased", desc)):
+        res=-1
+    elif bool(re.search("metabolism.*increased", desc)) :
+        res = 1
+    elif bool(re.search("metabolism.*decreased", desc)) :
+        res = -1
+    elif bool(re.search("increase.*activities", desc)):
+        res = 2
+    elif bool(re.search("decrease.*activities", desc)):
+        res = -2
+    else:
+        res=0
+    print (res)
+    return res
+
 #### function tests
 checkDrug ('aspirin')
+#
+
+#res=re.findall(r'metabolism.*increased', 'The therapeutic efficacy of Haloperidol metabolism can be increased when used in combination with')
+#r=ClassifyDesc('The therapeutic efficacy of Haloperidol can be increased when used in combination with Acetylsalicylic acid.')
+
