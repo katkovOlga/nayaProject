@@ -23,7 +23,7 @@ def findPatient(tz):
     #pat.findPatient()
 
 
-def checkDrug(drugName):
+def checkDrug(drugName,Pat1):
     pr1 = pr.Producer()
     # async run to producer GetDrug
     # #  consumer to listen -- if exist previous  -- to use
@@ -88,6 +88,12 @@ def checkDrug(drugName):
    #  NameList=[ni for ni in paDf['NameList'].split(",") if ni != name]
    # descLst=paDf['description'].split(",")
    #print (len(NameList), len(idList),len(descLst))
+   #severityList=[ClassifyDesc(desc) for desc in paDf['description'].split('",')]
+   # lstUsedInter =[el for  el in NameList if el in Pat1.ConstantDrugsList]
+   # lstIndexUsedIter=[el.index() for el in NameList if el in Pat1.ConstantDrugsList]
+   # lstSeverityUsedIter=[el for el in severityList if el.index() in lstIndexUsedIter]
+   # lstDescUsedIter=[el for el in descLst if el.index() in lstIndexUsedIter]
+
 
 
 
