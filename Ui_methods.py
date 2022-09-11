@@ -15,7 +15,7 @@ from multiprocessing import Pool
 import asyncio
 from  PatientClass import Patient
 # conection between  spark and kafka
-os.environ['PYSPARK_SUBMIT_ARGS'] = '--packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.1 pyspark-shell'
+#os.environ['PYSPARK_SUBMIT_ARGS'] = '--packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.1 pyspark-shell'
 
 def findPatient(tz):
     pat=Patient()
@@ -29,7 +29,7 @@ def checkDrug(drugName):
     # #  consumer to listen -- if exist previous  -- to use
     #
     print(drugName.capitalize())
-
+    os.environ['PYSPARK_SUBMIT_ARGS'] = '--packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.1 pyspark-shell'
     #asyncio.run(pr1.send(c.topic1, drugName.capitalize()))
 
     topic =c.topic2 + drugName.capitalize() #'GetInteractionaspirin'
@@ -57,20 +57,21 @@ def checkDrug(drugName):
     # df_kafka = df_kafka.select(col("value").cast("string"))
     # print(df_kafka)
     # Create schema for create df from json
-    schema = StructType().add("name", StringType())         #     .add("rxcui", StringType()) \
+    #schema = StructType().add("name", StringType())         #     .add("rxcui", StringType()) \
 
-    # schema = StructType() \
-    #     .add("rxcui", StringType()) \
-    #     .add("name", StringType()) \
-        # .add("severity",StringType()) \
-        # .add("description",StringType()) \
-        # .add ("IdList",StringType()) \
-        # .add("NameList",StringType())
+    schema = StructType() \
+        .add("rxcui", StringType()) \
+        .add("name", StringType()) \
+        .add("severity",StringType()) \
+        .add("description",StringType()) \
+        .add ("IdList",StringType()) \
+        .add("NameList",StringType())
     # change json to dataframe with schema
+    df_kafka.writeStream.format("console").start().awaitTermination()
     df1 = df_kafka.select(col("value").cast("string")) \
         .select(from_json(col("value"), schema).alias("value")) \
         .select("value.*")
-   # print('before')
+    print('before 2')
     df1.writeStream.format("console").start().awaitTermination()
 
    # pr1.send(c.topic1, drugName.capitalize())
@@ -85,6 +86,8 @@ def checkDrug(drugName):
    #  name=paDf['name']
    #  idList=[di for di in paDf['IdList'].split(",") if di != id]
    #  NameList=[ni for ni in paDf['NameList'].split(",") if ni != name]
+   # descLst=paDf['description'].split(",")
+   #print (len(NameList), len(idList),len(descLst))
 
 
 
@@ -139,6 +142,6 @@ def ClassifyDesc(desc):
 checkDrug ('aspirin')
 #
 
-#res=re.findall(r'metabolism.*increased', 'The therapeutic efficacy of Haloperidol metabolism can be increased when used in combination with')
+#
 #r=ClassifyDesc('The therapeutic efficacy of Haloperidol can be increased when used in combination with Acetylsalicylic acid.')
 
