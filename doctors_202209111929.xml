@@ -1,0 +1,85 @@
+<?xml version="1.0" ?>
+<!DOCTYPE doctors [
+  <!ELEMENT doctors (DATA_RECORD*)>
+  <!ELEMENT DATA_RECORD (tz?,licienNum?,FName?,LNAme?,specialisation?,workPlaceList?)+>
+  <!ELEMENT tz (#PCDATA)>
+  <!ELEMENT licienNum (#PCDATA)>
+  <!ELEMENT FName (#PCDATA)>
+  <!ELEMENT LNAme (#PCDATA)>
+  <!ELEMENT specialisation (#PCDATA)>
+  <!ELEMENT workPlaceList (#PCDATA)>
+]>
+<doctors>
+  <DATA_RECORD>
+    <tz>333333333</tz>
+    <licienNum>23232322</licienNum>
+    <FName>Kat</FName>
+    <LNAme>Adams</LNAme>
+    <specialisation>pediator</specialisation>
+    <workPlaceList>KH Leumit</workPlaceList>
+  </DATA_RECORD>
+  <DATA_RECORD>
+    <tz>11111111</tz>
+    <licienNum>1111111</licienNum>
+    <FName>Ron </FName>
+    <LNAme>Nahman</LNAme>
+    <specialisation>neurologist</specialisation>
+    <workPlaceList>KH Maccabi</workPlaceList>
+  </DATA_RECORD>
+  <DATA_RECORD>
+    <tz>2222222</tz>
+    <licienNum>2222222</licienNum>
+    <FName>Sara</FName>
+    <LNAme>Bruk </LNAme>
+    <specialisation>therapist</specialisation>
+    <workPlaceList>KH Leumit</workPlaceList>
+  </DATA_RECORD>
+  <DATA_RECORD>
+    <tz>3444444</tz>
+    <licienNum>44444444</licienNum>
+    <FName>Tamar</FName>
+    <LNAme>Kaz</LNAme>
+    <specialisation>therapist</specialisation>
+    <workPlaceList>KH Maccabi</workPlaceList>
+  </DATA_RECORD>
+  <DATA_RECORD>
+    <tz>55555555</tz>
+    <licienNum>5555555</licienNum>
+    <FName>Lea</FName>
+    <LNAme>Levin</LNAme>
+    <specialisation>therapist</specialisation>
+    <workPlaceList>KH Leumit</workPlaceList>
+  </DATA_RECORD>
+  <DATA_RECORD>
+    <tz>6666666666</tz>
+    <licienNum>66666666</licienNum>
+    <FName>Asher</FName>
+    <LNAme>Merzon</LNAme>
+    <specialisation>cardiologist</specialisation>
+    <workPlaceList>KH Maccabi</workPlaceList>
+  </DATA_RECORD>
+  <DATA_RECORD>
+    <tz>77777777</tz>
+    <licienNum>7777777</licienNum>
+    <FName>Boris</FName>
+    <LNAme>Goldin</LNAme>
+    <specialisation>neurologist</specialisation>
+    <workPlaceList>KH Maccabi</workPlaceList>
+  </DATA_RECORD>
+  <DATA_RECORD>
+    <tz>8888888</tz>
+    <licienNum>888888</licienNum>
+    <FName>Sara</FName>
+    <LNAme>Brown</LNAme>
+    <specialisation>oncologist</specialisation>
+    <workPlaceList>KH Leumit</workPlaceList>
+  </DATA_RECORD>
+  <DATA_RECORD>
+    <tz>999999999</tz>
+    <licienNum>999999999</licienNum>
+    <FName>Gady </FName>
+    <LNAme>Fishman</LNAme>
+    <specialisation>oncologist</specialisation>
+    <workPlaceList>KH Maccabi</workPlaceList>
+  </DATA_RECORD>
+</doctors>

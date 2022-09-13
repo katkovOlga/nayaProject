@@ -1,0 +1,215 @@
+<?xml version="1.0" ?>
+<!DOCTYPE patients [
+  <!ELEMENT patients (DATA_RECORD*)>
+  <!ELEMENT DATA_RECORD (tz?,FName?,LNAme?,Bithdate?,Deathdate?,ADress?,Mobile?,Doctor?,KypatHolim?,DisesesList?,DrugsTreatmentList?,Contraindications?)+>
+  <!ELEMENT tz (#PCDATA)>
+  <!ELEMENT FName (#PCDATA)>
+  <!ELEMENT LNAme (#PCDATA)>
+  <!ELEMENT Bithdate (#PCDATA)>
+  <!ELEMENT Deathdate (#PCDATA)>
+  <!ELEMENT ADress (#PCDATA)>
+  <!ELEMENT Mobile (#PCDATA)>
+  <!ELEMENT Doctor (#PCDATA)>
+  <!ELEMENT KypatHolim (#PCDATA)>
+  <!ELEMENT DisesesList (#PCDATA)>
+  <!ELEMENT DrugsTreatmentList (#PCDATA)>
+  <!ELEMENT Contraindications (#PCDATA)>
+]>
+<patients>
+  <DATA_RECORD>
+    <tz>1212121212</tz>
+    <FName>Olga</FName>
+    <LNAme>Olga1</LNAme>
+    <Bithdate>1970-01-01</Bithdate>
+    <Deathdate></Deathdate>
+    <ADress>Ariel</ADress>
+    <Mobile>00-1122334</Mobile>
+    <Doctor>123123</Doctor>
+    <KypatHolim>Clalit</KypatHolim>
+    <DisesesList>diabets,myocardial infarction,Cancer</DisesesList>
+    <DrugsTreatmentList>glucomin,aspirin</DrugsTreatmentList>
+    <Contraindications></Contraindications>
+  </DATA_RECORD>
+  <DATA_RECORD>
+    <tz>1122112211</tz>
+    <FName>Paul</FName>
+    <LNAme>Adams</LNAme>
+    <Bithdate>1971-10-10</Bithdate>
+    <Deathdate></Deathdate>
+    <ADress>Haifa</ADress>
+    <Mobile>054-455009</Mobile>
+    <Doctor>111111</Doctor>
+    <KypatHolim>Leumit</KypatHolim>
+    <DisesesList>diabets,peptic ulcer of the stomach,Cancer,back pain</DisesesList>
+    <DrugsTreatmentList>glucomin,avastin</DrugsTreatmentList>
+    <Contraindications></Contraindications>
+  </DATA_RECORD>
+  <DATA_RECORD>
+    <tz>123454321</tz>
+    <FName>Ray</FName>
+    <LNAme>Ray1</LNAme>
+    <Bithdate>1962-12-12</Bithdate>
+    <Deathdate></Deathdate>
+    <ADress>Petah Tikva</ADress>
+    <Mobile>054-1212123</Mobile>
+    <Doctor></Doctor>
+    <KypatHolim>Maccabi</KypatHolim>
+    <DisesesList>myocardial infarction,Essential Hypertension,cardiomyopathy,hypercholesterolemia,open angle,glaucoma</DisesesList>
+    <DrugsTreatmentList>alphagan,cosopt,carvedexxon,entresto,ezetrol,aspirin,omepradex,stator,normalax</DrugsTreatmentList>
+    <Contraindications></Contraindications>
+  </DATA_RECORD>
+  <DATA_RECORD>
+    <tz>5432112345</tz>
+    <FName>Karin</FName>
+    <LNAme>Karin22</LNAme>
+    <Bithdate>1982-05-05</Bithdate>
+    <Deathdate></Deathdate>
+    <ADress>Tel Aviv</ADress>
+    <Mobile>054-7006666</Mobile>
+    <Doctor></Doctor>
+    <KypatHolim>Leumit</KypatHolim>
+    <DisesesList>PTSD,GERD,hyperlipidemia,obesity fibromyalgia,OSA,DIABETES MELILITUS,HERNIA,BPH </DisesesList>
+    <DrugsTreatmentList>vector plus,lopresor divitabs,clopidogrel,jardiance duo,ezecor,stator</DrugsTreatmentList>
+    <Contraindications>amlow,etopan,lipitor,nsaids,aspirin</Contraindications>
+  </DATA_RECORD>
+  <DATA_RECORD>
+    <tz>656567895</tz>
+    <FName>Mery</FName>
+    <LNAme>Brain</LNAme>
+    <Bithdate>1953-01-01</Bithdate>
+    <Deathdate></Deathdate>
+    <ADress>Ariel</ADress>
+    <Mobile>053-2009999</Mobile>
+    <Doctor></Doctor>
+    <KypatHolim>Leumit</KypatHolim>
+    <DisesesList>polycythemia,hyperlipidemia,Wolff–Parkinson–White syndrome,myocardial infarction,BPH,fatty liver,ACOUSTIC NEUROMA,TREMOR,right hemiparesis</DisesesList>
+    <DrugsTreatmentList>betmiga,promnix,tritace,aspirin,remotiv,stalevo,kemadrin,carbosylane,paraffin,laxadin</DrugsTreatmentList>
+    <Contraindications>statins,etoricoxib,abitren,voltaren</Contraindications>
+  </DATA_RECORD>
+  <DATA_RECORD>
+    <tz>444555666</tz>
+    <FName>Dan</FName>
+    <LNAme>Koen</LNAme>
+    <Bithdate>1945-03-05</Bithdate>
+    <Deathdate></Deathdate>
+    <ADress>Petah Tikva</ADress>
+    <Mobile>052-3007777</Mobile>
+    <Doctor></Doctor>
+    <KypatHolim>Maccabi</KypatHolim>
+    <DisesesList>essential hypertension obesity,atrial fibrillation,schizophrenia,depression</DisesesList>
+    <DrugsTreatmentList>risperdal,xarelto,bisoprolol,enalapril,amlodipine,maleate,paroxetine</DrugsTreatmentList>
+    <Contraindications></Contraindications>
+  </DATA_RECORD>
+  <DATA_RECORD>
+    <tz>556644321</tz>
+    <FName>Kira</FName>
+    <LNAme>Nait</LNAme>
+    <Bithdate>1956-10-04</Bithdate>
+    <Deathdate></Deathdate>
+    <ADress>Ariel</ADress>
+    <Mobile>050-9988771</Mobile>
+    <Doctor></Doctor>
+    <KypatHolim>Leumit</KypatHolim>
+    <DisesesList>myocardial infarction,essential hypertension,diabetes melilitus,hyperlipidemia,crohn's disease,obesity</DisesesList>
+    <DrugsTreatmentList>metformin,ferrocal,lansoprazole,cartia,furosemide,thiamine,pyridoxine,atenolol,pravastatin sodium,lorazepam,mesalamine,cpl,isosorbide mononitrate</DrugsTreatmentList>
+    <Contraindications></Contraindications>
+  </DATA_RECORD>
+  <DATA_RECORD>
+    <tz>666678542</tz>
+    <FName>Yakiv</FName>
+    <LNAme>Levi</LNAme>
+    <Bithdate>1960-05-10</Bithdate>
+    <Deathdate></Deathdate>
+    <ADress>Tel Aviv</ADress>
+    <Mobile>051-2233445</Mobile>
+    <Doctor></Doctor>
+    <KypatHolim>Leumit</KypatHolim>
+    <DisesesList>hypothyroidism,hyperlipidemia,obesity,glaucoma,diabetes melilitus,hernia</DisesesList>
+    <DrugsTreatmentList>tafluprost,rosuvastatin,levothyroxine sodium </DrugsTreatmentList>
+    <Contraindications></Contraindications>
+  </DATA_RECORD>
+  <DATA_RECORD>
+    <tz>7778865432</tz>
+    <FName>Miri</FName>
+    <LNAme>Regev</LNAme>
+    <Bithdate>1932-10-12</Bithdate>
+    <Deathdate></Deathdate>
+    <ADress>Tel Aviv</ADress>
+    <Mobile>054-908123</Mobile>
+    <Doctor></Doctor>
+    <KypatHolim>Maccabi</KypatHolim>
+    <DisesesList>diabetes melilitus,essential  hypertension,hyperlipidemia,fatty liver</DisesesList>
+    <DrugsTreatmentList>creon,ramipril,bisoprolol,valerian,risperdal,omeprazole,halperin,pancreatin,ox bile extract</DrugsTreatmentList>
+    <Contraindications></Contraindications>
+  </DATA_RECORD>
+  <DATA_RECORD>
+    <tz>8888964212</tz>
+    <FName>Lea</FName>
+    <LNAme>Levin</LNAme>
+    <Bithdate>1975-02-11</Bithdate>
+    <Deathdate></Deathdate>
+    <ADress>Ariel</ADress>
+    <Mobile>050-4433221</Mobile>
+    <Doctor></Doctor>
+    <KypatHolim>Leumit</KypatHolim>
+    <DisesesList>hypothyroidism,renal failure,proteinuria,hyperkalemia,cataract,infertility,pseudoaphakia,hypertension,carotid artary stenosis,hypercholesterolemia,osteopenia,anemia in end stage,renal disease,intermittent claudication due to atheroscerosis of the extremities,peripheral vascular disease</DisesesList>
+    <DrugsTreatmentList>aranesp,synthroid,simvastatin,folic acid,lercanidipine,atenolol,sodium polystyrene sulfonate,aspirin,doxazosin,venofer</DrugsTreatmentList>
+    <Contraindications></Contraindications>
+  </DATA_RECORD>
+  <DATA_RECORD>
+    <tz>9998765123</tz>
+    <FName>Asher</FName>
+    <LNAme>Gordin</LNAme>
+    <Bithdate>1945-10-03</Bithdate>
+    <Deathdate></Deathdate>
+    <ADress>Tel Aviv</ADress>
+    <Mobile>051-2343234</Mobile>
+    <Doctor></Doctor>
+    <KypatHolim>Leumit</KypatHolim>
+    <DisesesList>hypercholesterolemia,hypertension,acoustic neurinoma,euthyroidism,diabetes melilitus,hernia,peripheral vertigo,goiter,catatact,pseudoaphakia,osteopenia,ptosis of eyelid,parathyroidectomy,osteoarthrosis,keratoacanthoma,female type,androgenetic alopecia,iron deficiency without anemia,nephro,hemorrhoids</DisesesList>
+    <DrugsTreatmentList>atorvastatin,tritace,atenolol,dapagliflozin,amaryl,vildagliptin,metformin</DrugsTreatmentList>
+    <Contraindications></Contraindications>
+  </DATA_RECORD>
+  <DATA_RECORD>
+    <tz>10987655455</tz>
+    <FName>Beni</FName>
+    <LNAme>Rom</LNAme>
+    <Bithdate>1936-11-02</Bithdate>
+    <Deathdate></Deathdate>
+    <ADress>Ariel</ADress>
+    <Mobile>054-2346541</Mobile>
+    <Doctor></Doctor>
+    <KypatHolim>Maccabi</KypatHolim>
+    <DisesesList>glaucoma,osteoarhrosis,myopia,hypercholesterolemia,osteoporosis,diabetes mellitus,tear film,insufficiency,low back pain,varicose beins of lower extremities,dilatation and irrigation of larcrimal duct,aphakia,optic atrophy associated with retinal dystrophies,essential hypertension,hypothyroidism,chronic rhinitis,nonorganic sleep disorder,keratoconus,fatty liver,unspecified hearing loss,lumbosacral spondylosis,rotator cuff syndrome,fungal belpharoconjunctivitis</DisesesList>
+    <DrugsTreatmentList>euthyrox,crestor,imsulin toujeo,lotan,iopidine,folex,calcimed,omepadex,aspirin,dorzolamide timolol</DrugsTreatmentList>
+    <Contraindications></Contraindications>
+  </DATA_RECORD>
+  <DATA_RECORD>
+    <tz>1124834804 </tz>
+    <FName>Gadi</FName>
+    <LNAme>Blum</LNAme>
+    <Bithdate>1935-01-09</Bithdate>
+    <Deathdate></Deathdate>
+    <ADress>Tel Aviv</ADress>
+    <Mobile>050-66774433</Mobile>
+    <Doctor></Doctor>
+    <KypatHolim>Leumit</KypatHolim>
+    <DisesesList>hashimoto thyroiditisz,osteopenia,uterine myoma,elevated alk phos,vitamin b12 deficiency,alzheimer’s </DisesesList>
+    <DrugsTreatmentList>levothyroxine,optisafe,centrum,donepezil </DrugsTreatmentList>
+    <Contraindications></Contraindications>
+  </DATA_RECORD>
+  <DATA_RECORD>
+    <tz>12654790001</tz>
+    <FName>Hana</FName>
+    <LNAme>Blum</LNAme>
+    <Bithdate>1948-03-04</Bithdate>
+    <Deathdate></Deathdate>
+    <ADress>Ariel</ADress>
+    <Mobile>050-2233445</Mobile>
+    <Doctor></Doctor>
+    <KypatHolim>Leumit</KypatHolim>
+    <DisesesList>osteopenia,essential hypertension,ventricular hypertrophy,cerebrovascular disease unspecified,seizure, hemiparesis,cognitive impairment,lumbar disc dis,myelopathy,hypercholesteremia</DisesesList>
+    <DrugsTreatmentList>ramipril,simvastatin,quetiapine,esomeprazole,zopiclone,calcium,vitamin d,lactulose</DrugsTreatmentList>
+    <Contraindications> Procaine penicillin</Contraindications>
+  </DATA_RECORD>
+</patients>
