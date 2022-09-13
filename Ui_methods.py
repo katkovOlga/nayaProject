@@ -1,26 +1,80 @@
 # UI  buttons functionality
 #  written by Olga Katkov
 import json
+
+import pandas
+
 import configuration as c
 import ProducerReq as pr
 from kafka import KafkaConsumer
+import numpy as np
 import os
 import re
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
-#from textblob import TextBlob
-#from textblob.classifiers import NaiveBayesClassifier
 from pyspark.sql.types import StringType, StructType, IntegerType, FloatType
 from multiprocessing import Pool
 import asyncio
 from  PatientClass import Patient
+import pandas as pd
+import pyarrow as pa
 # conection between  spark and kafka
 #os.environ['PYSPARK_SUBMIT_ARGS'] = '--packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.1 pyspark-shell'
 
 def findPatient(tz):
     pat=Patient()
     pat.tz= tz
-    #pat.findPatient()
+    pat.findPatient()
+    return pat
+
+def checkDrugKf(drugName,Pat1):
+    pr1 = pr.Producer()
+    lstSeverityUsedIter = []
+    lstDescUsedIter = []
+    topic = c.topic2 + drugName.capitalize()
+    print(topic)
+    consumer = KafkaConsumer(topic, bootstrap_servers=c.bootstrapServers)
+    pr1.send(c.topic1, drugName.capitalize())
+    # print the value of the consumer
+    # we run the consumer generator to fetch the message coming from topic1.
+    for message in consumer:
+       # print(str(message.value))
+        valJson=json.loads(message.value)
+        #print('before df')
+        paDf=pd.json_normalize(valJson) #, record_path =['students'])
+        #print(paDf)
+        #Medcine check interaction
+
+        # exclude duplicates
+        #print(paDf['rxcui'][0])
+        id= paDf['rxcui'][0]
+        name=paDf['name'][0]
+        # print('id=' , id,',,name=' , name)
+        # print ( paDf['IdList'][0])
+        # print(type(paDf['IdList'][0]))
+        idList=[di for di in paDf['IdList'][0] if di != id]
+        NameList=[ni for ni in paDf['NameList'][0] if ni != name]
+        descLst=paDf['description'][0]
+        # print(type(descLst),descLst)
+        # print ('length of result list=' ,len(NameList), len(idList),len(descLst))
+        severityList=[ClassifyDesc(desc) for desc in descLst]
+        lstUsedInter=[el for  el in NameList if el in Pat1.ConstantDrugsList]
+        lstIndexUsedIter=[NameList.index(el) for el in NameList if el in Pat1.ConstantDrugsList]
+        #print (lstIndexUsedIter)
+        #L, M = [[i for i in range(1, 10) if i % 3 == 0], [i * 2 for i in range(1, 10) if i % 3 == 0]]
+        # lstSeverityUsedIter=[el for el in severityList if severityList.index(el) in lstIndexUsedIter]
+        # lstDescUsedIter=[el for el in descLst if descLst.index(el) in lstIndexUsedIter]
+        if len(lstIndexUsedIter)>0:
+           for i in  lstIndexUsedIter:
+              lstSeverityUsedIter.append(severityList[i])
+              lstDescUsedIter.append(descLst[i])
+
+        #print (lstSeverityUsedIter,lstDescUsedIter)
+        break
+    dict = {'drug name': lstUsedInter, 'severity': lstSeverityUsedIter, 'description': lstDescUsedIter}
+    resDf=pd.DataFrame(dict)
+    #print (resDf)
+    return resDf
 
 
 def checkDrug(drugName,Pat1):
@@ -75,6 +129,7 @@ def checkDrug(drugName,Pat1):
     df1.writeStream.format("console").start().awaitTermination()
 
    # pr1.send(c.topic1, drugName.capitalize())
+
    #  print('after stream')
    #  paDf =df1.toPandas();
    #  print(paDf)
@@ -141,13 +196,17 @@ def ClassifyDesc(desc):
         res = -2
     else:
         res=0
-    print (res)
+    #print (res)
     return res
 
 #### function tests
-checkDrug ('aspirin')
+#checkDrug ('aspirin')
 #
+pat1 =Patient()
+pat1.TZ='1122112211'
 
+pat1.findPatient()
+checkDrugKf('aspirin',pat1)
 #
 #r=ClassifyDesc('The therapeutic efficacy of Haloperidol can be increased when used in combination with Acetylsalicylic acid.')
 

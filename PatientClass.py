@@ -68,7 +68,7 @@ class Patient:
     #print (",".join(self.DiseasesHistory))
     sql = "update patients set DisesesList='" + ",".join(self.DiseasesHistory) +"' where tz='"  + self.TZ + "';"
     #print (sql)
-   # WriteLog("Patient addDiagnose sql=" + sql.replace("'","") , "Info",self.TZ)
+    WriteLog("Patient addDiagnose sql=" + sql.replace("'","") , "Info",self.TZ)
     cursor.execute(sql)
     #print(cursor.rowcount, "record(s) affected")
     WriteLog("Patient addDiagnose rows affected=" + str(cursor.rowcount) , "Info",self.TZ)
@@ -102,8 +102,8 @@ class Patient:
       exit
     #print(",".join(self.ConstantDrugsList))
     sql = "update patients set DrugsTreatmentList='" + ",".join(self.ConstantDrugsList) + "' where tz='" + self.TZ + "';"
-    #print(sql)
-    #WriteLog("Patient.addDrugToPatientDrugList sql=" + sql.replace("'","") , "Info",self.TZ)
+    print(sql)
+    WriteLog("Patient.addDrugToPatientDrugList sql=" + sql.replace("'","") , "Info",self.TZ)
     cursor.execute(sql)
     #print(cursor.rowcount, "record(s) affected")
     WriteLog("Patient.addDrugToPatientDrugList  rows affected=" + str(cursor.rowcount), "Info",self.TZ)
@@ -132,36 +132,36 @@ class Patient:
 
    # WriteLog("Patient.findPatient sql=" + com1.replace("'",""), "Info",self.TZ, cnMS)
     cursor.execute(com1)
-    WriteLog("Patient.findPatient rowfound=" + str(cursor.rowcount), "Info",self.TZ)
-    row = cursor.fetchone()   #.fetchall()
+    if cursor.with_rows:
+      WriteLog("Patient.findPatient row found="   , "Info",self.TZ)
+      row = cursor.fetchone()   #.fetchall()
+      #print (row)
+      if row[8] != None:
+        self.DiseasesHistory =row[8].split(",")
+      #print(type(row[10]))
+      #row= [t[0] for t in rows]
+      if row[9]!= None:
+        self.ConstantDrugsList=row[9].split(",")
+      if row[10]!= None:
+        self.KnownPersonalDrugConflictsList=row[10].split(",")
 
-    #print (row)
-
-
-    if row[8] != None:
-      self.DiseasesHistory =row[8].split(",")
-    #print(type(row[10]))
-    #row= [t[0] for t in rows]
-    if row[9]!= None:
-      self.ConstantDrugsList=row[9].split(",")
-    if row[10]!= None:
-      self.KnownPersonalDrugConflictsList=row[10].split(",")
-
-    self.Birthdate=row[2]
-    self.FirstName=row[0]
-    self.LastName=row[1]
-    self.KupatHolim=row[7]
-    self.Doctor = row[6]
+      self.Birthdate=row[2]
+      self.FirstName=row[0]
+      self.LastName=row[1]
+      self.KupatHolim=row[7]
+      self.Doctor = row[6]
+    else:
+      WriteLog("Patient.findPatient row not found=", "Info", self.TZ)
     cursor.close()
     cnMS.close()
     #return self
 
 # try code
-p1=Patient()
-p1.TZ='1122112211'
-p1.findPatient()
+# p1=Patient()
+# p1.TZ='1122112211'
+# p1.findPatient()
 # print(type(p1.DiseasesHistory))
 # print(p1.ConstantDrugsList)
-#
-# p1.addDiagnose("Back pain")
-#p1.addDrugToPatientDrugList("Avastin")
+# #
+# # p1.addDiagnose("Back pain")
+# p1.addDrugToPatientDrugList("Glymidine")
