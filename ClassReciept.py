@@ -13,7 +13,7 @@ import configuration as c
 import pyarrow.parquet as pq
 import json
 from datetime import date,datetime, timedelta
-
+import PatientClass
 class Receipt:
   DoctorL=""
   PatientTz=""
@@ -32,36 +32,40 @@ class Receipt:
 
   def crReceipt(self):
     # save to hdfs all data for receipt for followed analysis
-    Interactions= self.DfInteraction.to_json()
-  #  print (Interactions)
-   # print(type(Interactions) )
-    #### Generating Today's date ####
-    today = date.today()
-    current_date = today.strftime("%d_%m_%Y")
-    currDT = today.strftime( "%m/%d/%Y, %H:%M:%S")
+    try:
+      Interactions= self.DfInteraction.to_json()
+    #  print (Interactions)
+     # print(type(Interactions) )
+      #### Generating Today's date ####
+      today = date.today()
+      current_date = today.strftime("%d_%m_%Y")
+      currDT = today.strftime( "%m/%d/%Y, %H:%M:%S")
 
 
-    df =pd.DataFrame(data={"DoctorLicense" : [self.DoctorL], "PatientTZ": [self.PatientTz], "PatientFirstName": [self.PatientFName]\
-            , "PatientLastName": [self.PatientLName], "KupatHolim": [self.PatientKH], "PtienBirthdate": [self.PatientBD] \
-           ,  "DrugName": [self.DrugName]  , "DrugId": [self.DrugId] ,"DrugDose": [self.DrugDose]  , "dateCreated":  [currDT] \
-          ,"PatientDiseasesLqist": [self.lstDiag] \
-            , "PatientTreatmentsList": [self.lstDrugs] , "drug-DrugInteractionJson":   [Interactions] })
+      df =pd.DataFrame(data={"DoctorLicense" : [self.DoctorL], "PatientTZ": [self.PatientTz], "PatientFirstName": [self.PatientFName]\
+              , "PatientLastName": [self.PatientLName], "KupatHolim": [self.PatientKH], "PtienBirthdate": [self.PatientBD] \
+             ,  "DrugName": [self.DrugName]  , "DrugId": [self.DrugId] ,"DrugDose": [self.DrugDose]  , "dateCreated":  [currDT] \
+            ,"PatientDiseasesLqist": [self.lstDiag] \
+              , "PatientTreatmentsList": [self.lstDrugs] , "drug-DrugInteractionJson":   [Interactions] })
 
 
 
-    path_tbl = "Receipt"+ self.PatientTz + self.DrugName+ current_date
-  #  print (path_tbl)
-    fs = pa.hdfs.connect(host='Cnt7-naya-cdh63', port=8020, user='hdfs', kerb_ticket=None, extra_conf=None)
-    #2. Create/clean the staging folder in HDFS
+      path_tbl = "Receipt"+ self.PatientTz + self.DrugName+ current_date
+    #  print (path_tbl)
+      fs = pa.hdfs.connect(host='Cnt7-naya-cdh63', port=8020, user='hdfs', kerb_ticket=None, extra_conf=None)
+      #2. Create/clean the staging folder in HDFS
 
-    if not (fs.exists(c.hdfs_json_path)):
-          fs.mkdir(c.hdfs_json_path)
-       #   print(f"{c.hdfs_json_path} created")
-    df_for_hdfs = pa.Table.from_pandas(df)
+      if not (fs.exists(c.hdfs_json_path)):
+            fs.mkdir(c.hdfs_json_path)
+         #   print(f"{c.hdfs_json_path} created")
+      df_for_hdfs = pa.Table.from_pandas(df)
 
-    with fs.open(c.hdfs_json_path + path_tbl, "wb") as fw:
-      pq.write_table(df_for_hdfs, fw)
-    fs.close()
+      with fs.open(c.hdfs_json_path + path_tbl, "wb") as fw:
+        pq.write_table(df_for_hdfs, fw)
+      fs.close()
+    except Exception as e:
+      PatientClass.WriteLog("crReceipt error " +e, "Error", self.PatientTz)
+      print(e)
 
 # test class
 #  Desloratadine 275635
