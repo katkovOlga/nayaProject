@@ -10,6 +10,7 @@ CurrentDoctorLic='5555555'
 
 # ======== Format DataFrame to json file and Write it to HDFS  ==================== #
 hdfs_json_path = 'hdfs://Cnt7-naya-cdh63:8020/user/naya/de_proj/hdfsarchive/'
+
 hdfs_json_checkpoint_path = 'hdfs://Cnt7-naya-cdh63:8020/user/nay/de_proj/hdfsarchive.checkpoint/'
 
 # ======== Format DataFrame to parquet file and Write it to HDFS  ==================== #
@@ -46,7 +47,9 @@ hive_port = 10000
 hive_username = 'hdfs'
 hive_password = 'naya'
 hive_mode = 'CUSTOM'
-hive_database= 'receipts_db'
+hive_database= 'receiptarchive'
+hive_path ='/user/hive/warehouse/receiptarchive.db/'
+hdfs_path='/user/naya/de_proj/hdfsarchive/'
 # ====== Settings to impala Connection ===================== #
 impala_host = 'Cnt7-naya-cdh63'
 impala_port = 21050

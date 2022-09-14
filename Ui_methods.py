@@ -15,6 +15,8 @@ from pyspark.sql.functions import *
 from pyspark.sql.types import StringType, StructType, IntegerType, FloatType
 from multiprocessing import Pool
 import asyncio
+import pymongo
+
 from  PatientClass import Patient
 import pandas as pd
 import pyarrow as pa
@@ -26,6 +28,45 @@ def findPatient(tz):
     pat.tz= tz
     pat.findPatient()
     return pat
+
+#insert item to mongodb if not exist
+def write_df_mongo(target_df):
+    try:
+        mogodb_client = pymongo.MongoClient('mongodb://localhost:27017/')
+        mydb = mogodb_client["DrugInteraction"]
+        mycol = mydb["Drugs"]
+
+
+        if mycol.count_documents({"MainDrugId": target_df['MainDrugId'][0]}, limit=1) == 0:
+            post = {
+                "MainDrugId": target_df['MainDrugId'][0],
+                "MainDrugName": target_df['MainDrugName'][0],
+                "DrugsIdList": target_df['DrugsIdList'],
+                "drugNameList": target_df['drugNameList'],
+                "severityList": target_df['severityList'],
+                "descriptionList": target_df['descriptionList']
+            }
+            mycol.insert_one(post)
+            print('item inserted')
+        else:
+            # myquery = {"MainDrugId":target_df['MainDrugId'][0]}
+            # newvalues = {"$set": {"DrugsIdList": target_df['DrugsIdList'],
+            # "drugNameList": target_df['drugNameList'],
+            # "severityList": target_df['severityList'],
+            # "descriptionList": target_df['descriptionList']}}
+            #
+            # mycol.update_one(myquery, newvalues)
+
+            print("already exist")
+
+    except Exception as e:
+        print(e)
+# df_waiting_list \
+#     .writeStream \
+#     .foreach(write_df_mongo)\
+#     .outputMode("append") \
+#     .start() \
+#     .awaitTermination()
 
 def checkDrugKf(drugName,Pat1):
     try:
@@ -39,7 +80,7 @@ def checkDrugKf(drugName,Pat1):
         # print the value of the consumer
         # we run the consumer generator to fetch the message coming from topic1.
         for message in consumer:
-           # print(str(message.value))
+            print(str(message.value))
             valJson=json.loads(message.value)
             #print('before df')
             paDf=pd.json_normalize(valJson) #, record_path =['students'])
@@ -59,6 +100,9 @@ def checkDrugKf(drugName,Pat1):
             # print(type(descLst),descLst)
             # print ('length of result list=' ,len(NameList), len(idList),len(descLst))
             severityList=[ClassifyDesc(desc) for desc in descLst]
+            dictInterFull = {'MainDrugId':id,"MainDrugName":name,"DrugsIdList": idList,'drugNameList': NameList, 'severityList': severityList, 'descriptionList': descLst}
+            write_df_mongo(dictInterFull)
+
             lstUsedInter=[el for  el in NameList if el in Pat1.ConstantDrugsList]
             lstIndexUsedIter=[NameList.index(el) for el in NameList if el in Pat1.ConstantDrugsList]
             #print (lstIndexUsedIter)
@@ -74,7 +118,7 @@ def checkDrugKf(drugName,Pat1):
             break
         dict = {'drug name': lstUsedInter, 'severity': lstSeverityUsedIter, 'description': lstDescUsedIter}
         resDf=pd.DataFrame(dict)
-        #print (resDf)
+        print (resDf)
         return resDf
     except Exception as e:
         print(e)
@@ -211,6 +255,7 @@ pat1.TZ='1122112211'
 
 pat1.findPatient()
 checkDrugKf('aspirin',pat1)
+#checkDrug('aspirin',pat1)
 
 #
 #r=ClassifyDesc('The therapeutic efficacy of Haloperidol can be increased when used in combination with Acetylsalicylic acid.')

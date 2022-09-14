@@ -14,6 +14,9 @@ import pyarrow.parquet as pq
 import json
 from datetime import date,datetime, timedelta
 import PatientClass
+import os
+
+
 class Receipt:
   DoctorL=""
   PatientTz=""
@@ -46,7 +49,7 @@ class Receipt:
               , "PatientLastName": [self.PatientLName], "KupatHolim": [self.PatientKH], "PtienBirthdate": [self.PatientBD] \
              ,  "DrugName": [self.DrugName]  , "DrugId": [self.DrugId] ,"DrugDose": [self.DrugDose]  , "dateCreated":  [currDT] \
             ,"PatientDiseasesLqist": [self.lstDiag] \
-              , "PatientTreatmentsList": [self.lstDrugs] , "drug-DrugInteractionJson":   [Interactions] })
+              , "PatientTreatmentsList": [self.lstDrugs] , "drugDrugInteractionJson":   [Interactions] })
 
 
 
@@ -63,29 +66,33 @@ class Receipt:
       with fs.open(c.hdfs_json_path + path_tbl, "wb") as fw:
         pq.write_table(df_for_hdfs, fw)
       fs.close()
+      #load to hive
+      print("sudo cp " + c.hdfs_path + path_tbl + " " + c.hive_path + path_tbl)
+      os.system("sudo cp " + c.hdfs_path + path_tbl + " " + c.hive_path + path_tbl) ;
+
     except Exception as e:
       PatientClass.WriteLog("crReceipt error " +e, "Error", self.PatientTz)
       print(e)
 
 # test class
-#  Desloratadine 275635
-# myR =Receipt()
-# myR.lstDiag=",".join(["diabets","heart failure","myocardial infarction"])
-# myR.lstDrugs=",".join(["glucomin","aspirin"])
-# myR.DrugId="5640"
-# myR.PatientKH="Clalit"
-# myR.PatientBD="1960-11-10"
-#
-# myR.DfInteraction= pd.DataFrame(data={"grugName":["ibuprofen","streptomycin"], "Synergy": ["Positive","Negative"] \
-#     , "Interaction Description": ["increase the anticoagulant activities","Risk"] , "Severity": ["H","L"] } )
-#  # .set_index("grugName")
-#
-# #print (myR.DfInteraction)
-# myR.DrugName="ibuprofen"
-# myR.DrugDose="400"
-# myR.DoctorL="123456"
-# myR.PatientTz ="1234564"
-# myR.PatientLName ="orlov"
-# myR.PatientFName="igal"
-#
-# myR.crReceipt()
+# Desloratadine 275635
+myR =Receipt()
+myR.lstDiag=",".join(["diabets","heart failure","myocardial infarction"])
+myR.lstDrugs=",".join(["glucomin","aspirin"])
+myR.DrugId="5640"
+myR.PatientKH="Clalit"
+myR.PatientBD="1960-11-10"
+
+myR.DfInteraction= pd.DataFrame(data={"grugName":["ibuprofen","streptomycin"], "Synergy": ["Positive","Negative"] \
+    , "Interaction Description": ["increase the anticoagulant activities","Risk"] , "Severity": ["3","-2"] } )
+ # .set_index("grugName")
+
+#print (myR.DfInteraction)
+myR.DrugName="ibuprofen"
+myR.DrugDose="400"
+myR.DoctorL="123456"
+myR.PatientTz ="1234564"
+myR.PatientLName ="orlov"
+myR.PatientFName="igal"
+
+myR.crReceipt()
