@@ -15,6 +15,7 @@ import json
 from datetime import date,datetime, timedelta
 import PatientClass
 import os
+from pyhive import hive
 
 
 class Receipt:
@@ -43,10 +44,18 @@ class Receipt:
       today = date.today()
       current_date = today.strftime("%d_%m_%Y")
       currDT = today.strftime( "%m/%d/%Y, %H:%M:%S")
+      ConflictSExists=False
+      for i in self.DfInteraction["Severity"]:
+        if int(i)>0:
+          continue
+        else:
+          ConflictSExists=True
+          break
+
 
 
       df =pd.DataFrame(data={"DoctorLicense" : [self.DoctorL], "PatientTZ": [self.PatientTz], "PatientFirstName": [self.PatientFName]\
-              , "PatientLastName": [self.PatientLName], "KupatHolim": [self.PatientKH], "PtienBirthdate": [self.PatientBD] \
+              , "ConflictSExists": ConflictSExists,"PatientLastName": [self.PatientLName], "KupatHolim": [self.PatientKH], "PtienBirthdate": [self.PatientBD] \
              ,  "DrugName": [self.DrugName]  , "DrugId": [self.DrugId] ,"DrugDose": [self.DrugDose]  , "dateCreated":  [currDT] \
             ,"PatientDiseasesLqist": [self.lstDiag] \
               , "PatientTreatmentsList": [self.lstDrugs] , "drugDrugInteractionJson":   [Interactions] })
@@ -67,8 +76,27 @@ class Receipt:
         pq.write_table(df_for_hdfs, fw)
       fs.close()
       #load to hive
-      print("sudo cp " + c.hdfs_path + path_tbl + " " + c.hive_path + path_tbl)
-      os.system("sudo cp " + c.hdfs_path + path_tbl + " " + c.hive_path + path_tbl) ;
+
+      hive_cnx = hive.Connection(host=c.hdfs_host,
+                                 port=c.hive_port,
+                                 username=c.hive_username,
+                                 password=c.hive_password,
+                                 auth=c.hive_mode)
+
+      cursor1 = hive_cnx.cursor()
+      #for vendorid, TripStartMonth in part_list:
+      strLoad = "LOAD DATA INPATH '" + c.hdfs_json_path + path_tbl + "' INTO TABLE receiptarchive.ReceiptHistory"
+          # cursor1.execute('''LOAD DATA INPATH 'hdfs://Cnt7-naya-cdh63:8020/user/alin/de_proj/traffic_parquet/vendorid={0}/TripStartMonth={1}'
+          #                        INTO TABLE taxi.traffic
+          #                        PARTITION (vendorid={0}, TripStartMonth={1}) '''.format(vendorid, TripStartMonth))
+      print(strLoad)
+      cursor1.execute(strLoad)
+      cursor1.close()
+      hive_cnx.commit()
+      hive_cnx.close()
+
+
+
 
     except Exception as e:
       PatientClass.WriteLog("crReceipt error " +e, "Error", self.PatientTz)
@@ -88,7 +116,7 @@ myR.DfInteraction= pd.DataFrame(data={"grugName":["ibuprofen","streptomycin"], "
  # .set_index("grugName")
 
 #print (myR.DfInteraction)
-myR.DrugName="ibuprofen"
+myR.DrugName="micropirin"
 myR.DrugDose="400"
 myR.DoctorL="123456"
 myR.PatientTz ="1234564"
