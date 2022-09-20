@@ -1,0 +1,68 @@
+
+pip install django
+
+2
+C:\Olga\Naya\Python\DrugInteractionAssist
+django-admin startproject DrugInteractionAssist
+django-admin startproject DrugInteractionAssist
+3.
+#create app
+C:\Olga\Naya\Python\DrugInteractionAssist>python manage.py startapp doctorMain
+4.
+into file setting.py (created by default first directory in add new app doctorMain
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'doctorMain',
+	
+	
+	
+]
+5. to test
+C:\Olga\Naya\Python\DrugInteractionAssist>python manage.py runserver
+http://127.0.0.1:8000/
+6. create dir templates into app ( for html templates) and sub dir with application name
+into sub dir html files
+
+6. ready styles for sites https://www.bootstrapcdn.com/
+
+https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css
+
+7. VM 
+sudo docker exec -it cnt7-naya-cdh63 bash
+/tmp/pycharm_project_339/manage.py
+
+ cd /tmp/pycharm_project_339/
+ python manage.py runserver cnt7-naya-cdh63cnt7-naya-cdh63:8000
+
+
+http://127.0.0.1:8000/
+
+
+docker run  add  -p 8000:8000 
+allowed hosts  external ip + host of contINER
+PYTHON RUN SERVER  HOST_NAYA:8000
+
+
+8.https://getbootstrap.com/
+https://getbootstrap.com/docs/5.2/examples/
+
+ # <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+
+<nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Features</a>
+        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Enterprise</a>
+        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Support</a>
+        <a class="py-2 text-dark text-decoration-none" href="#">Pricing</a>
+      </nav>
+	  
+	   <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Doctor Grug Assitance</a>
+        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Enterprise</a>
+        #<a class="me-3 py-2 text-dark text-decoration-none" href="#">Support</a>
+        #<a class="py-2 text-dark text-decoration-none" href="#">Pricing</a>
+    </nav>
