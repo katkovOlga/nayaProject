@@ -2,19 +2,17 @@
 #  written by Olga Katkov
 import json
 
-import pandas
-
 import configuration as c
 import ProducerReq as pr
 from kafka import KafkaConsumer
-import numpy as np
+
 import os
 import re
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 from pyspark.sql.types import StringType, StructType, IntegerType, FloatType
-from multiprocessing import Pool
-import asyncio
+# from multiprocessing import Pool
+# import asyncio
 import pymongo
 
 from  PatientClass import Patient
@@ -36,18 +34,19 @@ def write_df_mongo(target_df):
         mydb = mogodb_client["DrugInteraction"]
         mycol = mydb["Drugs"]
 
+        print(target_df['MainDrugId'], target_df['MainDrugName'])
+        if mycol.count_documents({"MainDrugId": target_df['MainDrugId']}, limit=1) == 0:
 
-        if mycol.count_documents({"MainDrugId": target_df['MainDrugId'][0]}, limit=1) == 0:
             post = {
-                "MainDrugId": target_df['MainDrugId'][0],
-                "MainDrugName": target_df['MainDrugName'][0],
+                "MainDrugId": target_df['MainDrugId'],
+                "MainDrugName": target_df['MainDrugName'],
                 "DrugsIdList": target_df['DrugsIdList'],
                 "drugNameList": target_df['drugNameList'],
                 "severityList": target_df['severityList'],
                 "descriptionList": target_df['descriptionList']
             }
             mycol.insert_one(post)
-            print('item inserted')
+            print('item inserted to mango')
         else:
             # myquery = {"MainDrugId":target_df['MainDrugId'][0]}
             # newvalues = {"$set": {"DrugsIdList": target_df['DrugsIdList'],
@@ -74,41 +73,27 @@ def checkDrugKf(drugName,Pat1):
         lstSeverityUsedIter = []
         lstDescUsedIter = []
         topic = c.topic2 + drugName.capitalize()
-        print(topic)
         consumer = KafkaConsumer(topic, bootstrap_servers=c.bootstrapServers)
-        pr1.send(c.topic1, drugName.capitalize())
-        # print the value of the consumer
-        # we run the consumer generator to fetch the message coming from topic1.
+        pr1.send(c.topic1,drugName.capitalize())
+        #print("before")
         for message in consumer:
-            print(str(message.value))
+            #print(message.value)
             valJson=json.loads(message.value)
-            #print('before df')
             paDf=pd.json_normalize(valJson) #, record_path =['students'])
-            #print(paDf)
             #Medcine check interaction
 
-            # exclude duplicates
-            #print(paDf['rxcui'][0])
             id= paDf['rxcui'][0]
             name=paDf['name'][0]
-            # print('id=' , id,',,name=' , name)
-            # print ( paDf['IdList'][0])
-            # print(type(paDf['IdList'][0]))
+            #print(id,name)
             idList=[di for di in paDf['IdList'][0] if di != id]
             NameList=[ni for ni in paDf['NameList'][0] if ni != name]
             descLst=paDf['description'][0]
-            # print(type(descLst),descLst)
-            # print ('length of result list=' ,len(NameList), len(idList),len(descLst))
             severityList=[ClassifyDesc(desc) for desc in descLst]
             dictInterFull = {'MainDrugId':id,"MainDrugName":name,"DrugsIdList": idList,'drugNameList': NameList, 'severityList': severityList, 'descriptionList': descLst}
             write_df_mongo(dictInterFull)
 
             lstUsedInter=[el for  el in NameList if el in Pat1.ConstantDrugsList]
             lstIndexUsedIter=[NameList.index(el) for el in NameList if el in Pat1.ConstantDrugsList]
-            #print (lstIndexUsedIter)
-            #L, M = [[i for i in range(1, 10) if i % 3 == 0], [i * 2 for i in range(1, 10) if i % 3 == 0]]
-            # lstSeverityUsedIter=[el for el in severityList if severityList.index(el) in lstIndexUsedIter]
-            # lstDescUsedIter=[el for el in descLst if descLst.index(el) in lstIndexUsedIter]
             if len(lstIndexUsedIter)>0:
                for i in  lstIndexUsedIter:
                   lstSeverityUsedIter.append(severityList[i])
@@ -118,8 +103,9 @@ def checkDrugKf(drugName,Pat1):
             break
         dict = {'drug name': lstUsedInter, 'severity': lstSeverityUsedIter, 'description': lstDescUsedIter}
         resDf=pd.DataFrame(dict)
-        print (resDf)
-        return resDf
+        # print (resDf)
+        # print(id)
+        return id,resDf
     except Exception as e:
         print(e)
         return pd.DataFrame()
@@ -214,16 +200,7 @@ def addDiagnose(name):
 
 
 def ClassifyDesc(desc):
-    # keyWords=[('adverse effects','neg'),
-    #           ('therapeutic efficacy','pos'),
-    #           ('',''),
-    #           ('','')]
-     # cl = NaiveBayesClassifier(keyWords)
-    # blob = TextBlob(desc, classifier=cl)
-    # res= blob.classify()
-    #re.search("risk or severity .increased", desc)
     res=0
-
     if bool(re.search("adverse effects.*increased", desc)):
        res= -5
     elif bool(re.search("therapeutic efficacy.*increased", desc)):
@@ -242,6 +219,9 @@ def ClassifyDesc(desc):
         res = 2
     elif bool(re.search("decrease.*activities", desc)):
         res = -2
+
+    elif bool(re.search("decrease.*excretion rate", desc)):
+        res = -1
     else:
         res=0
     #print (res)
@@ -249,12 +229,14 @@ def ClassifyDesc(desc):
 
 #### function tests
 #checkDrug ('aspirin')
-#
-pat1 =Patient()
-pat1.TZ='1122112211'
 
+pat1 =Patient()
+pat1.TZ='889988998899'
+df=pd.DataFrame()
+id=""
 pat1.findPatient()
-checkDrugKf('aspirin',pat1)
+id,df=checkDrugKf('rosuvastatin',pat1)
+print(id,df)
 #checkDrug('aspirin',pat1)
 
 #

@@ -116,7 +116,7 @@ class Patient:
       cursor.close()
       cnMS.close
     except Exception as e:
-      WriteLog("Patient.addDrugToPatientDrugList error:"+ e, "Error", self.TZ)
+      WriteLog("Patient.addDrugToPatientDrugList error:"+ str(e), "Error", self.TZ)
 
   def rmDrugToPatientDiagnose(self, diagnose, drug):
     # remove drug from Patient
@@ -162,7 +162,7 @@ class Patient:
       cursor.close()
       cnMS.close()
     except Exception as e:
-      WriteLog("Patient.findPatient error:"+ e, "Error", self.TZ)
+      WriteLog("Patient.findPatient error:"+ str(e), "Error", self.TZ)
 
     #return self
 

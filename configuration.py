@@ -5,11 +5,12 @@ bootstrapServers = "cnt7-naya-cdh63:9092"
 topic1 = 'GetDrug'
 topic2 = 'GetInteraction'
 
-CurrentDoctorLic='5555555'
+CurrentDoctorLic='11123344'
 
 
 # ======== Format DataFrame to json file and Write it to HDFS  ==================== #
 hdfs_json_path = 'hdfs://Cnt7-naya-cdh63:8020/user/naya/de_proj/hdfsarchive/'
+hdfs_json_path2 = 'hdfs://Cnt7-naya-cdh63:8020/user/Olga/'
 
 hdfs_json_checkpoint_path = 'hdfs://Cnt7-naya-cdh63:8020/user/nay/de_proj/hdfsarchive.checkpoint/'
 
